@@ -52,6 +52,7 @@ app.get('/', getPopularMovies);
 function Movie(data) {
   this.title = data.title;
   this.popularity = data.popularity;
+  this.overview = data.overview;
   this.released_on = data.released_on;
   this.image_url =
     'https://image.tmdb.org/t/p/w370_and_h556_bestv2/' + data.poster_path;
@@ -109,6 +110,7 @@ let fetchPopularMovies = (input => {
 function PopularMovies(data) {
   this.title = data.title;
   this.popularity = data.popularity;
+  this.overview = data.overview;
   this.released_on = data.release_date;
   this.image_url =
     'https://image.tmdb.org/t/p/w370_and_h556_bestv2/' + data.poster_path;
@@ -118,9 +120,9 @@ function PopularMovies(data) {
 
 //save movie function
 function saveResults(req, res) {
-  let {title, popularity, released_on, image_url, created_at} = req.body;
-  let SQL = `INSERT INTO movies(title, popularity, released_on, image_url, created_at) VALUES($1,$2,$3,$4,$5) RETURNING id;`;
-  let values = [title, popularity, released_on, image_url, created_at];
+  let {title, popularity, overview, released_on, image_url, created_at} = req.body;
+  let SQL = `INSERT INTO movies(title, popularity, overview, released_on, image_url, created_at) VALUES($1,$2,$3,$4,$5,$6) RETURNING id;`;
+  let values = [title, popularity, overview, released_on, image_url, created_at];
   client.query(SQL, values)
     .then(res.redirect(`/mymovies`))
     .catch(err => errorHandler(err, res));
