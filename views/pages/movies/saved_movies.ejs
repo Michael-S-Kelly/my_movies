@@ -17,25 +17,6 @@
             <form action="<%= `/details/${movie.id}` %>" method="get">
               <button class="view-details">View Details</button>
             </form>
-            <form action="/delete/<%= movie.id %>" method="post">
-              <button type="submit">Delete Movie</button>
-            </form>
-            <form target="_blank"
-                action="http://www.amazon.com/exec/obidos/external-search"
-                [RETURN]
-                method="get"
-             >
-            <input type="hidden" name="mode" value="blended" />
-            <input type="hidden" name="tag" value="insert associate tag" /> Search
-              Amazon:<br />
-            <input
-              type="text"
-              name="keyword"
-              size="10"
-              value="<%= movie.title %>"
-           />
-           <input type="submit" value="Go" />
-          </form>
           <% }) %>
       </ul>
 </main>

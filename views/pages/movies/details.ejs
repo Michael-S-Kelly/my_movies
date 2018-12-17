@@ -14,6 +14,25 @@
       <p>Overview: <%= movie.overview %></p>
       <p> Released On: <%= movie.released_on %></p>
       <p> Popularity: <%= movie.popularity %></p>
+      <form target="_blank"
+      action="http://www.amazon.com/exec/obidos/external-search"
+      [RETURN]
+      method="get"
+   >
+  <input type="hidden" name="mode" value="blended" />
+  <input type="hidden" name="tag" value="insert associate tag" /> Search
+    Amazon:<br />
+  <input
+    type="text"
+    name="keyword"
+    size="10"
+    value="<%= movie.title %>"
+ />
+ <input type="submit" value="Go" />
+</form>
+<form action="/delete/<%= movie.id %>" method="post">
+  <button type="submit">Delete Movie</button>
+</form>
   </main>
   <footer>
 
