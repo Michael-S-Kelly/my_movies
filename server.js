@@ -44,7 +44,11 @@ app.post('/show', getResults);
 //app.get('/movies', getResults);
 app.post('/mymovies', saveResults);
 app.get('/mymovies', getSavedMovies)
+
+app.get('/details/:id', getDetails);
+
 app.post('/delete/:id', deleteMovie);
+
 
 
 //generate popular movies
@@ -54,7 +58,11 @@ function Movie(data) {
   this.title = data.title;
   this.popularity = data.popularity;
   this.overview = data.overview;
-  this.released_on = data.released_on;
+  if( data.released_on){
+    this.released_on = data.released_on;
+  } else {
+    this.released_on = 'N/A';
+  }
   this.image_url =
     'https://image.tmdb.org/t/p/w370_and_h556_bestv2/' + data.poster_path;
   this.created_at = Date.now();
@@ -140,6 +148,20 @@ function getSavedMovies(request, response){
     .catch(err => console.error(err));
 }
 
+
+function getDetails(request, response) {
+  console.log('running getDetails');
+  let SQL = 'SELECT * FROM movies WHERE id=$1;';
+  let values = [request.params.id];
+
+  return client.query(SQL, values)
+    .then(result => {
+
+      response.render('../views/pages/movies/details', {movie: result.rows[0]});
+    });
+}
+
+
 function deleteMovie(request, response){
   console.log('delete running');
   let SQL =`DELETE FROM movies WHERE id = $1;`;
@@ -147,6 +169,7 @@ function deleteMovie(request, response){
   client.query(SQL, values)
     .then(response.redirect('/mymovies'));
 };
+
 
 function errorHandler(err, res) {
   res.redirect('https://http.cat/404');
