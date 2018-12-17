@@ -125,8 +125,6 @@ function saveResults(req, res) {
     .catch(err => errorHandler(err, res));
 }
 
-};
-
 
 function errorHandler(err, res) {
   res.redirect('https://http.cat/404');
