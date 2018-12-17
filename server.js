@@ -86,7 +86,6 @@ function errorHandler(err, res) {
   res.redirect('https://http.cat/404');
 }
 
-
 app.listen(PORT, () => {
   console.log(`listening on ${PORT}`);
 });
