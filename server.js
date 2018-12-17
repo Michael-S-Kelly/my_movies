@@ -123,6 +123,7 @@ function saveResults(req, res) {
   client.query(SQL, values)
     .then(res.redirect(`/`))
     .catch(err => errorHandler(err, res));
+}
 
 };
 
@@ -135,3 +136,4 @@ function errorHandler(err, res) {
 app.listen(PORT, () => {
   console.log(`listening on ${PORT}`);
 });
+
