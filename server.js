@@ -42,7 +42,7 @@ app.get('/new', (req, res) => {
 app.set('view engine', 'ejs');
 app.post('/show', getResults);
 //app.get('/movies', getResults);
-app.post('/', saveResults);
+app.post('/save', saveResults);
 
 
 //generate popular movies
@@ -123,11 +123,14 @@ function saveResults(req, res) {
   client.query(SQL, values)
     .then(res.redirect(`/`))
     .catch(err => errorHandler(err, res));
+
 };
+
 
 function errorHandler(err, res) {
   res.redirect('https://http.cat/404');
 }
+
 
 app.listen(PORT, () => {
   console.log(`listening on ${PORT}`);
