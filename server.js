@@ -52,6 +52,7 @@ function Movie(data) {
   this.title = data.title;
   this.popularity = data.popularity;
   this.released_on = data.released_on;
+  this.overview = data.overview;
   this.image_url =
     'https://image.tmdb.org/t/p/w370_and_h556_bestv2/' + data.poster_path;
   this.created_at = Date.now();
