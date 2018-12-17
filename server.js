@@ -43,6 +43,7 @@ app.set('view engine', 'ejs');
 app.post('/show', getResults);
 //app.get('/movies', getResults);
 app.post('/save', saveResults);
+app.get('/mymovies', getSavedMovies)
 
 
 //generate popular movies
@@ -115,7 +116,7 @@ function PopularMovies(data) {
 }
 
 
-
+//save movie function
 function saveResults(req, res) {
   let {title, popularity, released_on, image_url, created_at} = req.body;
   let SQL = `INSERT INTO my_movies(title, popularity, released_on, image_url, created_at) RETURNING id;`;
@@ -123,6 +124,17 @@ function saveResults(req, res) {
   client.query(SQL, values)
     .then(res.redirect(`/`))
     .catch(err => errorHandler(err, res));
+}
+
+//Get saved movies
+function getSavedMovies(request, response){
+  let SQL = 'SELECT * FROM movies;';
+
+  return client.query(SQL)
+    .then( results => {
+      response.render('../views/pages/movies/saved_movies', { savedMovies: results.rows })
+    })
+    .catch(err => console.error(err));
 }
 
 
