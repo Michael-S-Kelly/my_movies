@@ -10,6 +10,7 @@ CREATE TABLE movies (
   id SERIAL PRIMARY KEY,
   title VARCHAR(255),
   popularity VARCHAR(255),
+  overview TEXT,
   released_on VARCHAR(255),
   image_url VARCHAR(255),
   created_at BIGINT
