@@ -39,6 +39,10 @@ app.get('/new', (req, res) => {
   res.render('../views/pages/searches/new');
 });
 
+app.get('/about', (req, res) => {
+  res.render('../views/pages/about_us/aboutus');
+});
+
 app.set('view engine', 'ejs');
 app.post('/show', getResults);
 //app.get('/movies', getResults);
