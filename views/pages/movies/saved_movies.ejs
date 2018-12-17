@@ -15,6 +15,9 @@
             <img src="<%= movie.image_url %>">
             <h3><%= movie.title %></h3>
           </li>
+          <form action = "/delete/<%= movie.id %>" method = "post">
+            <button type = "submit">Delete Movie</button>
+          </form>
         <% }) %>
       </ul>
 </main>
