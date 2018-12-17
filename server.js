@@ -39,6 +39,9 @@ app.set('view engine', 'ejs');
 
 app.get('/movies', getResults);
 
+//generate popular movies
+app.get('/', getPopularMovies);
+
 function Movie(data) {
   this.title = data.title;
   this.popularity = data.popularity;
@@ -71,6 +74,42 @@ function getResults(request, response) {
     });
 
 }
+
+
+//Functions to generate popular movies for home page
+//get function
+function getPopularMovies(request, response){
+  console.log('my request body:', request.body);
+  let input = request.body;
+  fetchPopularMovies(input)
+    .then(result => {
+      response.render('/', {popularMovies: result,});
+    });
+}
+//fetch function
+let fetchPopularMovies = (input => {
+  const url = `https://api.themoviedb.org/3/discover/movie?api_key=${process.env.MOVIE_API_KEY}`;
+
+  return superagent.get(url).then(result => {
+    const popularMovies = result.body.results.map(data => {
+      const summary = new PopularMovies(data);
+      return summary;
+    });
+    return popularMovies;
+  });
+});
+//constructor function
+function PopularMovies(data) {
+  this.title = data.title;
+  this.popularity = data.popularity;
+  this.released_on = data.release_date;
+  this.image_url =
+    'https://image.tmdb.org/t/p/w370_and_h556_bestv2/' + data.poster_path;
+  this.description = data.overview;
+}
+
+
+
 
 app.listen(PORT, () => {
   console.log(`listening on ${PORT}`);
