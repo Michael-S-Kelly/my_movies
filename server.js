@@ -44,7 +44,11 @@ app.post('/show', getResults);
 //app.get('/movies', getResults);
 app.post('/mymovies', saveResults);
 app.get('/mymovies', getSavedMovies)
+
 app.get('/details/:id', getDetails);
+
+app.post('/delete/:id', deleteMovie);
+
 
 
 //generate popular movies
@@ -144,6 +148,7 @@ function getSavedMovies(request, response){
     .catch(err => console.error(err));
 }
 
+
 function getDetails(request, response) {
   console.log('running getDetails');
   let SQL = 'SELECT * FROM movies WHERE id=$1;';
@@ -155,6 +160,15 @@ function getDetails(request, response) {
       response.render('../views/pages/movies/details', {movie: result.rows[0]});
     });
 }
+
+
+function deleteMovie(request, response){
+  console.log('delete running');
+  let SQL =`DELETE FROM movies WHERE id = $1;`;
+  let values = [request.params.id];
+  client.query(SQL, values)
+    .then(response.redirect('/mymovies'));
+};
 
 
 function errorHandler(err, res) {
