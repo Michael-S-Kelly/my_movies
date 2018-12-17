@@ -35,8 +35,9 @@
       <button type="submit">Delete Movie</button>
     </form>
     <form action="<%- `/details/${movie.id}` %>" method="post">
-      <lable><input type="text" name="userName" placeholder="userName" value="userName"></lable>
-      <lable><textarea type="text" name="review_body" placeholder="Your Review Here" value=""></textarea></lable>
+      <lable><input type="text" name="username" placeholder="userName" value="userName"></lable>
+      <input type="hidden" name="created_at" value=" <%= Date.now() %>"/>
+      <lable><input type="text" name="review" placeholder="Your Review Here" value="review" /></lable>
       <input type="hidden" name="movie_id" value="<%- movie.id %>"/>
       <button type=submit>Add Review</button>
     </form>
