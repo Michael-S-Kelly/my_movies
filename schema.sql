@@ -12,5 +12,7 @@ CREATE TABLE movies (
   popularity VARCHAR(255),
   released_on VARCHAR(255),
   image_url VARCHAR(255),
-  created_at BIGINT
+  created_at BIGINT,
+  location_id INTEGER NOT NULL,
+  FOREIGN KEY (location_id) REFERENCES locations (id)
 );
