@@ -1,31 +1,44 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <%- include('../layout/head') %>
-</head>
-<body id="bodyStuff"></body>
-<header>
-  <%- include('../layout/header') %>
-  <div id="subTitle"></div>
-</header>
-<main id="mainStuff">
+  <head>
+    <%- include('../layout/head') %>
+  </head>
+  <body id="bodyStuff"></body>
+  <header>
+    <%- include('../layout/header') %>
+    <div id="subTitle"></div>
+  </header>
+  <main id="mainStuff">
     <ul id="savedMovies">
-        <% savedMovies.forEach(movie => { %>
-          <li class="movies" data-id="<%= movie.id %>">
-            <img src="<%= movie.image_url %>">
-            <h3><%= movie.title %></h3>
-          </li>
-          <form action = "/delete/<%= movie.id %>" method = "post">
-            <button type = "submit">Delete Movie</button>
-          </form>
-        <% }) %>
-      </ul>
-</main>
-<footer>
-
-</footer>
-<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-<script src="../../public/scripts/app.js"></script>
-<foot>
-</foot>
+      <% savedMovies.forEach(movie => { %>
+      <li class="movies" data-id="<%= movie.id %>">
+        <img src="<%= movie.image_url %>" />
+        <h3><%= movie.title %></h3>
+      </li>
+      <form action="/delete/<%= movie.id %>" method="post">
+        <button type="submit">Delete Movie</button>
+      </form>
+      <form target="_blank"
+        action="http://www.amazon.com/exec/obidos/external-search"
+        [RETURN]
+        method="get"
+      >
+        <input type="hidden" name="mode" value="blended" />
+        <input type="hidden" name="tag" value="insert associate tag" /> Search
+        Amazon:<br />
+        <input
+          type="text"
+          name="keyword"
+          size="10"
+          value="<%= movie.title %>"
+        />
+        <input type="submit" value="Go" />
+      </form>
+      <% }) %>
+    </ul>
+  </main>
+  <footer></footer>
+  <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+  <script src="../../public/scripts/app.js"></script>
+  <foot> </foot>
 </html>
