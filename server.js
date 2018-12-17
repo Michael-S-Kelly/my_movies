@@ -42,7 +42,7 @@ app.get('/new', (req, res) => {
 app.set('view engine', 'ejs');
 app.post('/show', getResults);
 //app.get('/movies', getResults);
-app.post('/save', saveResults);
+app.post('/mymovies', saveResults);
 app.get('/mymovies', getSavedMovies)
 
 
@@ -119,10 +119,10 @@ function PopularMovies(data) {
 //save movie function
 function saveResults(req, res) {
   let {title, popularity, released_on, image_url, created_at} = req.body;
-  let SQL = `INSERT INTO my_movies(title, popularity, released_on, image_url, created_at) RETURNING id;`;
+  let SQL = `INSERT INTO movies(title, popularity, released_on, image_url, created_at) VALUES($1,$2,$3,$4,$5) RETURNING id;`;
   let values = [title, popularity, released_on, image_url, created_at];
   client.query(SQL, values)
-    .then(res.redirect(`/`))
+    .then(res.redirect(`/mymovies`))
     .catch(err => errorHandler(err, res));
 }
 

@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
-
+  <%- include('../../layout/head') %>
 <body>
-
+  <%- include('../../layout/header') %>
 <main>
 
         <h2> New Search </h2>
@@ -14,17 +14,20 @@
   <h2> Search Results</h2>
   <section class ="all-api-movies" id ="test">
       <% renderedMovies.forEach( data => { %>
+        <form action ="/mymovies" method = "post">
         <section class ="api-movies">
-          <h3 class="title"><%= data.title %></h3>
+            <input type="hidden" name="title" value="<%- data.title %>">
+          <h3 class="title" value="<%-data.title %>"><%= data.title %></h3>
+          <input type="hidden" name="popularity" value="<%- data.popularity %>">
           <p>Popularity: <%= data.popularity %></p>
-          <p><%= data.released_on %></p>
-          <img src=<%= data.image_url %>>
+          <input type="hidden" name="released_on" value="<%- data.released_on %>">
+          <p>Released On: <%= data.released_on %></p>
+          <input type="hidden" name="image_url" value="<%- data.image_url %>">
+          <img src=<%= data.image_url %> value="<%-data.image_url %>">
+          <input type="hidden" name="created_at" value="<%- data.created_at %>">
           <p><%= data.created_at %></p>
-          <section>
-          </section>
         </section>
-        <form action ="/save" method = "post">
-            <button>Save This Movie</button>
+            <button class="savebut" type="submit">Save This Movie</button>
         </form>
       <% }) %>
   </section>
