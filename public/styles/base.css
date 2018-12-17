@@ -1,0 +1,32 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin-left: 7vw;
+  margin-right: 6vw;
+}
+
+
+/* home image container */
+#homeContent {
+  width: 100%;
+}
+#popularMovies {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+#imgcontain {
+  width: 20.72vw;
+  height: 10vw;
+  margin-bottom: 32vw;
+}
+.homemovies {
+  height: 30vw;
+  padding-bottom: 3vw;
+}
+#listimage {
+  height: 30vw;
+}
+
+

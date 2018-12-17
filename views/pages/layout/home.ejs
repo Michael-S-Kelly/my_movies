@@ -1,8 +1,10 @@
-<ul id="savedMovies">
+<ul id="popularMovies">
     <% popularMovies.forEach(movie => { %>
-      <li class="movies" data-id="<%= popularMovies.id %>">
-        <img src="<%= movie.image_url %>">
+      <div id="imgcontain">
+        <li  id="listimage" data-id="<%= popularMovies.id %>">
+        <img class="homemovies" src="<%= movie.image_url %>">
         <h3><%= movie.title %></h3>
-      </li>
+        </li>
+      </div>
     <% }) %>
   </ul>
