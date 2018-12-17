@@ -116,7 +116,13 @@ function PopularMovies(data) {
 
 
 
-
+function saveResults(req, res) {
+  let {title, popularity, released_on, image_url, created_at} = req.body;
+  let SQL = `INSERT INTO my_movies(title, popularity, released_on, image_url, created_at) RETURNING id;`;
+  let values = [title, popularity, released_on, image_url, created_at];
+  client.query(SQL, values)
+    .then(res.redirect(`/`))
+    .catch(err => errorHandler(err, res));
 
 function errorHandler(err, res) {
   res.redirect('https://http.cat/404');
@@ -125,3 +131,4 @@ function errorHandler(err, res) {
 app.listen(PORT, () => {
   console.log(`listening on ${PORT}`);
 });
+
