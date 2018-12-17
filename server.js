@@ -89,7 +89,7 @@ function getPopularMovies(request, response){
   let input = request.body;
   fetchPopularMovies(input)
     .then(result => {
-      response.render('/', {popularMovies: result,});
+      response.render('../views/pages/index', {popularMovies: result,});
     });
 }
 //fetch function
@@ -123,6 +123,7 @@ function saveResults(req, res) {
   client.query(SQL, values)
     .then(res.redirect(`/`))
     .catch(err => errorHandler(err, res));
+};
 
 function errorHandler(err, res) {
   res.redirect('https://http.cat/404');
@@ -131,4 +132,3 @@ function errorHandler(err, res) {
 app.listen(PORT, () => {
   console.log(`listening on ${PORT}`);
 });
-
