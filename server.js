@@ -42,7 +42,7 @@ app.get('/new', (req, res) => {
 app.set('view engine', 'ejs');
 app.post('/show', getResults);
 //app.get('/movies', getResults);
-app.post('/', saveResults);
+app.post('/save', saveResults);
 
 
 //generate popular movies
@@ -89,7 +89,7 @@ function getPopularMovies(request, response){
   let input = request.body;
   fetchPopularMovies(input)
     .then(result => {
-      response.render('/', {popularMovies: result,});
+      response.render('../views/pages/index', {popularMovies: result,});
     });
 }
 //fetch function
@@ -125,10 +125,15 @@ function saveResults(req, res) {
     .catch(err => errorHandler(err, res));
 }
 
+};
+
+
 function errorHandler(err, res) {
   res.redirect('https://http.cat/404');
 }
 
+
 app.listen(PORT, () => {
   console.log(`listening on ${PORT}`);
 });
+
