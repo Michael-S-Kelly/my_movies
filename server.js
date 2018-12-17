@@ -35,9 +35,13 @@ const client = new pg.Client(process.env.DATABASE_URL);
 client.on('error', error => console.error(error));
 client.connect();
 
+app.get('/new', (req, res) => {
+  res.render('../views/pages/searches/new');
+});
+
 app.set('view engine', 'ejs');
 
-app.get('/movies', getResults);
+app.post('/show', getResults);
 
 function Movie(data) {
   this.title = data.title;
@@ -45,6 +49,7 @@ function Movie(data) {
   this.released_on = data.released_on;
   this.image_url =
     'https://image.tmdb.org/t/p/w370_and_h556_bestv2/' + data.poster_path;
+  this.created_at = Date.now();
 }
 
 let fetchData = (input =>{
@@ -67,7 +72,7 @@ function getResults(request, response) {
   fetchData(input)
     .then(result => {
       console.log(result);
-      response.render('pages/searches/movies', {renderedMovies: result,});
+      response.render('pages/searches/show', {renderedMovies: result});
     });
 
 }
