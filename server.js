@@ -35,8 +35,13 @@ const client = new pg.Client(process.env.DATABASE_URL);
 client.on('error', error => console.error(error));
 client.connect();
 
+app.get('/new', (req, res) => {
+  res.render('../views/pages/searches/new');
+});
+
 app.set('view engine', 'ejs');
-app.get('/movies', getResults);
+app.post('/show', getResults);
+//app.get('/movies', getResults);
 app.post('/', saveResults);
 
 
@@ -72,17 +77,9 @@ function getResults(request, response) {
   fetchData(input)
     .then(result => {
       console.log(result);
-      response.render('pages/searches/movies', {renderedMovies: result,});
+      response.render('pages/searches/show', {renderedMovies: result});
     });
-}
 
-function saveResults(req, res) {
-  let {title, popularity, released_on, image_url, created_at} = req.body;
-  let SQL = `INSERT INTO my_movies(title, popularity, released_on, image_url, created_at) RETURNING id;`;
-  let values = [title, popularity, released_on, image_url, created_at];
-  client.query(SQL, values)
-    .then(res.redirect(`/`))
-    .catch(err => errorHandler(err, res));
 }
 
 //Functions to generate popular movies for home page
