@@ -1,11 +1,8 @@
 <ul id="savedMovies">
-    <% results.forEach(task => { %>
+    <% popularMovies.forEach(movie => { %>
       <li class="movies" data-id="<%= popularMovies.id %>">
-        <img href="<%= popularMovies.img_url %>">
-        <p><%= popularMovies.title %></p>
-        <p>Description: <%= task.description %></p>
-        <p>Task Id: <%= task.id %></p>
-        <a href="/show/<%= popularMovies.id %>">View Details</a>
+        <img src="<%= movie.image_url %>">
+        <h3><%= movie.title %></h3>
       </li>
     <% }) %>
   </ul>
