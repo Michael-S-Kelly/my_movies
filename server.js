@@ -36,8 +36,9 @@ client.on('error', error => console.error(error));
 client.connect();
 
 app.set('view engine', 'ejs');
-
 app.get('/movies', getResults);
+app.post('/', saveResults);
+
 
 function Movie(data) {
   this.title = data.title;
@@ -45,6 +46,7 @@ function Movie(data) {
   this.released_on = data.released_on;
   this.image_url =
     'https://image.tmdb.org/t/p/w370_and_h556_bestv2/' + data.poster_path;
+  this.created_at = Date.now();
 }
 
 let fetchData = (input =>{
@@ -69,8 +71,21 @@ function getResults(request, response) {
       console.log(result);
       response.render('pages/searches/movies', {renderedMovies: result,});
     });
-
 }
+
+function saveResults(req, res) {
+  let {title, popularity, released_on, image_url, created_at} = req.body;
+  let SQL = `INSERT INTO my_movies(title, popularity, released_on, image_url, created_at) RETURNING id;`;
+  let values = [title, popularity, released_on, image_url, created_at];
+  client.query(SQL, values)
+    .then(res.redirect(`/`))
+    .catch(err => errorHandler(err, res));
+}
+
+function errorHandler(err, res) {
+  res.redirect('https://http.cat/404');
+}
+
 
 app.listen(PORT, () => {
   console.log(`listening on ${PORT}`);
