@@ -3,27 +3,31 @@
 <head>
   <%- include('../../layout/head') %>
 </head>
-<body id="bodyStuff">
+<body id="bodyContent">
   <header>
     <%- include('../../layout/header') %>
     <div id="subTitle"></div>
   </header>
-  <main id="mainStuff">
+  <main id="mainContent">
+    <section>
       <ul id="savedMovies">
           <% savedMovies.forEach(movie => { %>
-            <li class="movies" data-id="<%= movie.id %>">
-              <img src="<%= movie.image_url %>">
-              <h3><%= movie.title %></h3>
+            <div id="savedcontain">
+            <li id="savedlist" class="movies" data-id="<%= movie.id %>">
+              <img id="savedimage" src="<%= movie.image_url %>">
+              <h3 id="savedmtitle"><%= movie.title %></h3>
               <form action="<%= `/details/${movie.id}` %>" method="get">
                 <button class="view-details">View Details</button>
               </form>
+            </div>
             <% }) %>
         </ul>
+    </section>
   </main>
   <footer>
   </footer>
   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-  <script src="../../public/scripts/app.js"></script>
+  <script src="../../../public/scripts/app.js"></script>
 </body>
 </html>
 

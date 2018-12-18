@@ -8,7 +8,7 @@ header {
   height: 10vw;;
   background-color: #222;
   font-size: 6vw;
-  padding-top: 5vw;
+  padding-top: 1vw;
 }
 #header {
   text-align: left;
@@ -16,19 +16,19 @@ header {
 }
 a {
 text-decoration: none;
-color: #fff;
+color: #00eeff;
 transition: color 0.3s ease;
 }
 span {
-  background-color: #fff;
+  background-color: #00eeff;
 }
 a:hover {
-  color: #000;
+  color: #ffa500;
 }
 #nav{
   position: absolute;
-  width: 380px;
-  margin: 0 -120px 0 -357px;
+  width: 330px;
+  margin: 0 -120px 0 -307px;
   padding: 15px;
   opacity: .95;
   background: #222;
@@ -73,7 +73,7 @@ a:hover {
   height: 4px;
   margin-bottom: 5px;
   position: relative;
-  background: #fff;
+  background: #00eeff;
   border-radius: 3px;
   z-index: 1;
   transform-origin: 4px 0px;
@@ -85,26 +85,28 @@ a:hover {
     text-align: left;
     padding-left: 3vw;
     color: #00eeff;
+    font-size: 5vw;
   }
   header {
     width: 100%;
-    height: 8vw;;
+    height: 7vw;;
     background-color: #222;
     font-size: 6vw;
-    /* padding-top: 5vw; */
+    padding-top: 1vw;
   }
   #headcontain {
     text-align: left;
   }
   a {
   text-decoration: none;
-  color: #fff;
+  color: #00eeff;
   transition: none;
   }
   a:hover {
-    color: #000;
+    color: #ffa500;
   }
   #nav{
+    display: flex;
     position: relative;
     width: 380px;
     margin: 0 0 0 0;
@@ -119,6 +121,7 @@ a:hover {
     }
     
     #nav li {
+      margin-left:2vw;
     padding: 3px 0;
     font-size: 22px;
     }

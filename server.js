@@ -13,17 +13,17 @@ app.use(cors());
 const PORT = process.env.PORT || 3000;
 
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static('./public'));
+app.use(express.static(__dirname + '/public'));
 
 app.use(
-  methodOverride((request, response) => {
+  methodOverride((req, res) => {
     if (
-      request.body &&
-      typeof request.body === 'object' &&
-      '_method' in request.body
+      req.body &&
+      typeof req.body === 'object' &&
+      '_method' in req.body
     ) {
-      let method = request.body._method;
-      delete request.body._method;
+      let method = req.body._method;
+      delete req.body._method;
       return method;
     }
   })
@@ -89,24 +89,31 @@ let fetchData = input => {
   });
 };
 
-function getResults(request, response) {
-  console.log('my request body:', request.body);
-  let input = request.body;
-  fetchData(input).then(result => {
-    console.log(result);
-    response.render('pages/searches/show', { renderedMovies: result });
-  });
+
+function getResults(req, res) {
+  console.log('my req body:', req.body);
+  let input = req.body;
+  fetchData(input)
+    .then(result => {
+      console.log(result);
+      res.render('pages/searches/show', {renderedMovies: result});
+    })
+    .catch(err => errorHandler(err, res));
 }
 
 //Functions to generate popular movies for home page
 //get function
-function getPopularMovies(request, response) {
-  console.log('my request body:', request.body);
-  let input = request.body;
-  fetchPopularMovies(input).then(result => {
-    response.render('../views/pages/index', { popularMovies: result });
-  });
+
+function getPopularMovies(req, res){
+  console.log('my req body:', req.body);
+  let input = req.body;
+  fetchPopularMovies(input)
+    .then(result => {
+      res.render('../views/pages/index', {popularMovies: result,});
+    })
+    // .catch(err => errorHandler(err, res));
 }
+
 //fetch function
 let fetchPopularMovies = input => {
   let query = input.selectSort;
@@ -122,7 +129,9 @@ let fetchPopularMovies = input => {
     });
     return popularMovies;
   });
+
 };
+
 //constructor function
 function PopularMovies(data) {
   this.title = data.title;
@@ -160,21 +169,19 @@ function saveResults(req, res) {
 }
 
 //Get saved movies
-function getSavedMovies(request, response) {
+function getSavedMovies(req, res){
   let SQL = 'SELECT * FROM movies;';
 
-  return client
-    .query(SQL)
-    .then(results => {
-      response.render('../views/pages/movies/saved_movies', {
-        savedMovies: results.rows
-      });
+  return client.query(SQL)
+    .then( results => {
+      res.render('../views/pages/movies/saved_movies', { savedMovies: results.rows })
     })
     .catch(err => console.error(err));
 }
 
-function saveReviews(request, response) {
+function saveReviews(req, res) {
   console.log('save reviews is firing');
+
   let { username, review, created_at, movie_id } = request.body;
   let SQL = `INSERT INTO reviews (username, review, created_at, movie_id) VALUES($1,$2,$3,$4) RETURNING id;`;
   let values = [username, review, created_at, movie_id];
@@ -210,6 +217,7 @@ function deleteMovie(request, response) {
   let values = [request.params.id];
   client.query(SQL, values).then(response.redirect('/mymovies'));
 }
+
 
 function errorHandler(err, res) {
   res.redirect('https://http.cat/404');
