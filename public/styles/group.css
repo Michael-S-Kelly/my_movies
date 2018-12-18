@@ -1,0 +1,24 @@
+#mainStuff {
+  background-color: #000000;
+}
+
+#group>img {
+  position: relative;
+  top: 10vw;
+  left: 6vw;
+  width: 75vw;
+}
+
+.star {
+  position: relative;
+  top: 12vw;
+  left: 2vw;
+  width: 40vw;
+}
+
+#natePhoto {
+  position: relative;
+  top: 12vw;
+  left: 2vw;
+  width: 40vw;
+}
