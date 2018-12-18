@@ -55,6 +55,19 @@ body {
     color: #ffa500;
     margin-bottom: 1vw;
 }
+
+.sort {
+  background-color: #000;
+  color: #fff;
+  font-weight: bold;
+  font-size: 3vw;
+  width: 15.5vw;
+  height: 4vw;
+  margin-bottom: 1vw;
+  border-radius: .3em;
+  margin-left: 2vw;
+  float: left;
+}
 /* Search page layout */
 
 #searchcontain {
@@ -252,6 +265,18 @@ body {
     margin-bottom: 2vw;
   }
 
+  .sort {
+    background-color: #000;
+    color: #fff;
+    font-weight: bold;
+    font-size: 2vw;
+    width: 10vw;
+    height: 3vw;
+    margin-bottom: 1vw;
+    border-radius: .3em;
+    margin-left: 3vw;
+    float: left;
+  }
 /* Search page layout */
 
 #searchcontain {
