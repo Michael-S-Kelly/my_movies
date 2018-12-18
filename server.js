@@ -180,7 +180,7 @@ function getSavedMovies(req, res){
     .catch(err => console.error(err));
 }
 
-function saveReviews(req, res) {
+function saveReviews(request, response) {
   console.log('save reviews is firing');
 
   let { username, review, created_at, movie_id } = request.body;
@@ -213,10 +213,16 @@ function getDetails(request, response) {
 
 function deleteMovie(request, response) {
   console.log('delete running');
-  //let SQL = 'DELETE FROM movies INNER JOIN reviews ON movies.id = movie_id WHERE movies.id=$1;';
-  let SQL = `DELETE FROM movies WHERE id = $1;`;
-  let values = [request.params.id];
-  client.query(SQL, values).then(response.redirect('/mymovies'));
+  //let SQL = 'DELETE FROM movies, reviews INNER JOIN reviews ON movies.id = movie_id WHERE movies.id=$1;';
+  let SQL2 = `DELETE FROM reviews WHERE id = $1;`;
+
+  let value = [request.params.id];
+  
+  client.query(SQL2, value).then(function () {
+    let SQL = `DELETE FROM movies WHERE id = $1;`;
+    let values = [request.params.id];
+    client.query(SQL, values).then(response.redirect('/mymovies'));
+  })
 }
 
 
