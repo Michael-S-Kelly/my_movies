@@ -1,19 +1,33 @@
 #subTitle {
-  width: 100vw;
+  width: 87vw;
   color: red;
   background-color: silver;
-  
+  text-align: center;
 }
 
 #mainStuff {
   background-color: #000000;
-  width: 100vw;
+  width: 87vw;
+}
+
+#mainStuff>div {
+  position: relative;
+  top: 0vw;
+  left: 0vw;
+  height: 272vw;
+}
+
+#group {
+  position: relative;
+  top: 15vw;
+  left: 6vw;
+  width: 75vw;
 }
 
 #group>img {
   position: relative;
-  top: 10vw;
-  left: 6vw;
+  top: 0vw;
+  left: 0vw;
   width: 75vw;
 }
 
@@ -23,7 +37,8 @@
   left: 6vw;
   width: 40vw;
   height: 37.5vw;
-  margin-bottom: 15vw;
+  margin-bottom: -20vw;
+  z-index: 5;
 }
 
 .star {
@@ -57,9 +72,10 @@
 
 #claricePhoto {
   position: relative;
-  top: -25vw;
+  top: -26vw;
   left: 9.2vw;
   width: 21vw;
+  height: 20vw;
   border-radius: 13vw;
 }
 
@@ -77,4 +93,43 @@
   left: 9.2vw;
   width: 21vw;
   border-radius: 13vw;
+}
+
+h3 {
+  position: relative;
+  top: -21vw;
+  left: 0vw;
+  color: white;
+  font-size: 3vw;
+  text-align: center;
+}
+
+.inDet {
+  position: relative;
+  top: 13vw;
+  left: 0vw;
+  color: white;
+}
+
+.inDet>ul {
+  position: relative;
+  top: -9vw;
+  left: 47vw;
+  width: 40vw;
+}
+
+.inDet>ul>li {
+  position: relative;
+  top: 0vw;
+  left: 0vw;
+  width: 40vw;
+  font-size: 3vw;
+  margin-bottom: 3vw;
+}
+
+.inDet>p{
+  position: relative;
+  top: 4vw;
+  left: 0vw;
+  font-size: 2vw;
 }
