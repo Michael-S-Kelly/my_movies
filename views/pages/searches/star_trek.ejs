@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+
+  <body>
+
+    <ul id="trekMovies">
+        <% trekMovies.forEach(movie => { %>
+          <div id="imgcontain">
+            <li  id="listimage" data-id="<%= trekMovies.id %>">
+            <img class="homemovies" src="<%= movie.image_url %>">
+            </li>
+          </div>
+        <% }) %>
+    </ul>
+
+
+
+  </body>
+
+
+
+</html>

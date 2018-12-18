@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <%- include('../../layout/head') %>
+</head>
+<body id="bodyStuff">
+  <header>
+    <%- include('../../layout/header') %>
+    <div id="subTitle"></div>
+  </header>
+
+<form action = "/sort" method = "post" name="selectSort">
+    See Movies By: Rating
+    <input type="radio" name="search" value="Rating" />
+  </label>
+  <label>
+    See Movies By: Popular With Kids
+    <input type="radio" name="search" value="Popular With Kids" />
+  </label>
+  <label>
+    See Movies By: Popular This Year
+    <input type="radio" name="search" value="Popular This Year" />
+  </label>
+  <button>Submit</button>
+
+</form>
+
+
+
+<ul id="sortedMovies">
+    <% sortedMovies.forEach(movie => { %>
+      <div id="imgcontain">
+        <li  id="listimage" data-id="<%= sortedMovies.id %>">
+        <img class="homemovies" src="<%= movie.image_url %>">
+        <h3 id="homemtitle"><%= movie.title %></h3>
+        </li>
+      </div>
+    <% }) %>
+  </ul>
+
+
+  <footer>
+    </footer>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="../../public/scripts/app.js"></script>
+  </body>
+  </html>
