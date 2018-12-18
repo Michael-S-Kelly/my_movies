@@ -13,7 +13,7 @@ app.use(cors());
 const PORT = process.env.PORT || 3000;
 
 app.use(express.urlencoded({ extended: true }));
-app.use(express.static('./public'));
+app.use(express.static(__dirname + '/public'));
 
 app.use(
   methodOverride((request, response) => {
@@ -160,7 +160,7 @@ function saveReviews(request, response) {
   let SQL = `INSERT INTO reviews (username, review, created_at, movie_id) VALUES($1,$2,$3,$4) RETURNING id;`;
   let values = [username, review, created_at, movie_id];
   client.query(SQL, values)
-    .then(response.redirect('/mymovies'))
+    .then(response.redirect(`/details/${movie_id}`))
     .catch(err => errorHandler(err, response));
 }
 
@@ -170,11 +170,11 @@ function getDetails(request, response) {
   let SQL = 'SELECT * FROM movies INNER JOIN reviews ON movies.id = movie_id WHERE movies.id=$1;';
   // let SQL = 'SELECT * FROM movies WHERE id=$1;';
   let values = [request.params.id];
-
+  console.log(client.query(SQL, values));
   return client.query(SQL, values)
     .then(result => {
 
-      response.render('../views/pages/movies/details', {movie: result.rows[0]});
+      response.render('../views/pages/movies/details', {movie: result.rows});
     });
 }
 
