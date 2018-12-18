@@ -5,35 +5,41 @@
   <%- include('../../layout/header') %>
 <main id="homeContent">
 
-        <h2> New Search </h2>
-        <form class="search-form" action="/show" method="post">
-          <label>Movie Search: <input type="text" name="movieSearch" /> </label>
-          <button>Submit</button>
-        </form>
-
-  <h2> Search Results</h2>
+    <!-- <h2 id="poptitle">New Search</h2> -->
+    <div id="searchcontain">
+    <img class="projector" src="../../styles/images/projector.jpg">
+    <form class="search-form" action="/show" method="post">
+      <label id="labelSearch">Movie Search: 
+        <input type="text" name="movieSearch" id="movieSearch"/> 
+      </label>
+      <button id="searchbut">Submit</button>
+    </form>
+  </div>
+  <h2 id="resultstitle"> Search Results</h2>
   <section class ="all-api-movies" id ="test">
       <% renderedMovies.forEach( data => { %>
-        <form action ="/mymovies" method = "post">
+      <div id="resultscontain">
+        <form class ="results-form" action="/mymovies" method = "post">
         <section class ="api-movies">
-            <input type="hidden" name="title" value="<%- data.title %>">
-          <h3 class="title" value="<%-data.title %>"><%= data.title %></h3>
-          <input type="hidden" name="popularity" value="<%- data.popularity %>">
-          <p>Popularity: <%= data.popularity %></p>
-          <input type="hidden" name="overview" value="<%- data.overview %>">
-          <p>Overview: <%= data.overview %></p>
-          <input type="hidden" name="released_on" value="<%- data.released_on %>">
-          <p>Released On: <%= data.released_on %></p>
           <input type="hidden" name="image_url" value="<%- data.image_url %>">
-          <img src=<%= data.image_url %> value="<%-data.image_url %>">
+          <img id="resultsimage"src=<%= data.image_url %> value="<%-data.image_url %>">
+          <input type="hidden" name="title" value="<%- data.title %>">
+          <h3 class="resultstitle" value="<%-data.title %>"><%= data.title %></h3>
+          <input type="hidden" name="popularity" value="<%- data.popularity %>">
+          <p id="popresults">Popularity: <%= data.popularity %></p>
+          <input type="hidden" name="overview" value="<%- data.overview %>">
+          <p id="overviewresults"><%= data.overview %></p>
+          <input type="hidden" name="released_on" value="<%- data.released_on %>">
+          <p id="releasedresult">Released On: <%= data.released_on %></p>
           <input type="hidden" name="created_at" value="<%- data.created_at %>">
-          <p><%= data.created_at %></p>
         </section>
-            <button class="savebut" type="submit">Save This Movie</button>
+            <button class="savebut" type="submit">Save Movie</button>
         </form>
+      </div>
       <% }) %>
   </section>
 </main>
+<%- include('../../layout/footer') %>
 </body>
 </html>
 

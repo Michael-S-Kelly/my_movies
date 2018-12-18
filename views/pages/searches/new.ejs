@@ -4,14 +4,19 @@
   <body>
       <%- include('../../layout/header') %>
     <main class="searches">
-      <h2> New Search </h2>
+      <h2 id="poptitle">New Search</h2>
+      <div id="searchcontain">
+      <img class="projector" src="../../styles/images/projector.jpg">
       <form class="search-form" action="/show" method="post">
-        <label>Movie Search: <input type="text" name="movieSearch" /> </label>
-        <button>Submit</button>
+        <label id="labelSearch">Movie Search: 
+          <input type="text" name="movieSearch" id="movieSearch"/> 
+        </label>
+        <button id="searchbut">Submit</button>
       </form>
+    </div>
     </main>
 
-    
+    <%- include('../../layout/footer') %>
   </body>
 </html>
 
