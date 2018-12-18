@@ -16,14 +16,14 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + '/public'));
 
 app.use(
-  methodOverride((request, response) => {
+  methodOverride((req, res) => {
     if (
-      request.body &&
-      typeof request.body === 'object' &&
-      '_method' in request.body
+      req.body &&
+      typeof req.body === 'object' &&
+      '_method' in req.body
     ) {
-      let method = request.body._method;
-      delete request.body._method;
+      let method = req.body._method;
+      delete req.body._method;
       return method;
     }
   })
@@ -88,26 +88,28 @@ let fetchData = (input =>{
   });
 });
 
-function getResults(request, response) {
-  console.log('my request body:', request.body);
-  let input = request.body;
+function getResults(req, res) {
+  console.log('my req body:', req.body);
+  let input = req.body;
   fetchData(input)
     .then(result => {
       console.log(result);
-      response.render('pages/searches/show', {renderedMovies: result});
-    });
+      res.render('pages/searches/show', {renderedMovies: result});
+    })
+    .catch(err => errorHandler(err, res));
 
 }
 
 //Functions to generate popular movies for home page
 //get function
-function getPopularMovies(request, response){
-  console.log('my request body:', request.body);
-  let input = request.body;
+function getPopularMovies(req, res){
+  console.log('my req body:', req.body);
+  let input = req.body;
   fetchPopularMovies(input)
     .then(result => {
-      response.render('../views/pages/index', {popularMovies: result,});
-    });
+      res.render('../views/pages/index', {popularMovies: result,});
+    })
+    .catch(err => errorHandler(err, res));
 }
 //fetch function
 let fetchPopularMovies = (input => {
@@ -120,6 +122,7 @@ let fetchPopularMovies = (input => {
     });
     return popularMovies;
   });
+  
 });
 //constructor function
 function PopularMovies(data) {
@@ -144,47 +147,49 @@ function saveResults(req, res) {
 }
 
 //Get saved movies
-function getSavedMovies(request, response){
+function getSavedMovies(req, res){
   let SQL = 'SELECT * FROM movies;';
 
   return client.query(SQL)
     .then( results => {
-      response.render('../views/pages/movies/saved_movies', { savedMovies: results.rows })
+      res.render('../views/pages/movies/saved_movies', { savedMovies: results.rows })
     })
     .catch(err => console.error(err));
 }
 
-function saveReviews(request, response) {
+function saveReviews(req, res) {
   console.log('save reviews is firing');
-  let {username, review, created_at, movie_id} = request.body;
+  let {username, review, created_at, movie_id} = req.body;
   let SQL = `INSERT INTO reviews (username, review, created_at, movie_id) VALUES($1,$2,$3,$4) RETURNING id;`;
   let values = [username, review, created_at, movie_id];
   client.query(SQL, values)
-    .then(response.redirect(`/details/${movie_id}`))
-    .catch(err => errorHandler(err, response));
+    .then(res.redirect(`/details/${movie_id}`))
+    .catch(err => errorHandler(err, res));
 }
 
 
-function getDetails(request, response) {
+function getDetails(req, res) {
   console.log('running getDetails');
   let SQL = 'SELECT * FROM movies INNER JOIN reviews ON movies.id = movie_id WHERE movies.id=$1;';
   // let SQL = 'SELECT * FROM movies WHERE id=$1;';
-  let values = [request.params.id];
+  let values = [req.params.id];
   console.log(client.query(SQL, values));
   return client.query(SQL, values)
     .then(result => {
 
-      response.render('../views/pages/movies/details', {movie: result.rows});
-    });
+      res.render('../views/pages/movies/details', {movie: result.rows});
+    })
+    .catch(err => errorHandler(err, res));
 }
 
 
-function deleteMovie(request, response){
+function deleteMovie(req, res){
   console.log('delete running');
   let SQL =`DELETE FROM movies WHERE id = $1;`;
-  let values = [request.params.id];
+  let values = [req.params.id];
   client.query(SQL, values)
-    .then(response.redirect('/mymovies'));
+    .then(res.redirect('/mymovies'))
+    .catch(err => errorHandler(err, res));
 };
 
 
