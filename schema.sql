@@ -24,3 +24,4 @@ CREATE TABLE reviews (
   movie_id INTEGER NOT NULL,
   FOREIGN KEY (movie_id) REFERENCES movies (id)
 );
+
