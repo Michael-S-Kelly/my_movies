@@ -29,8 +29,8 @@ body {
 #imgcontain {
   text-align: center;
   width: 20.85vw;
-  height: 13vw;
-  margin-bottom: 32vw;
+  height: 30vw;
+  margin-bottom: 5vw;
 }
 .homemovies {
   height: 29vw;
@@ -42,6 +42,10 @@ body {
 #homemtitle {
   font-size: 3vw;
   font-weight: bold;
+  height: 3vw;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
   
 }
 #poptitle {
@@ -90,8 +94,8 @@ body {
 #imgcontain {
   text-align: center;
   width: 21vw;
-  height: 13vw;
-  margin-bottom: 32vw;
+  height: 30vw;
+  margin-bottom: 3vw;
 }
 .homemovies {
   height: 29vw;
@@ -102,8 +106,12 @@ body {
   margin-left:1.7vw;
 }
 #homemtitle {
-  font-size: 3vw;
+  font-size: 2vw;
   font-weight: bold;
+  height: 3vw;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
   }
   #poptitle {
     text-align: center;
@@ -113,6 +121,7 @@ body {
     color: #00eeff;
     margin-bottom: 1vw;
     background-color: #666;
+    margin-bottom: 2vw;
 }
 /* home page layout */
 }
