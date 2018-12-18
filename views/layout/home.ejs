@@ -1,12 +1,21 @@
-<h2 id="poptitle">Popular Movies</h2>
-<form>
-    <select class="sort">
-      <option value="default">Sort By</option>
-      <option value="default">Rating</option>
-      <option value="default">Popularity</option>
-      <option value="default">Ranking</option>
-    </select>
-  </form>
+<form action = "/sort" method = "post" name="selectSort">
+      Sort By: Rating
+      <input type="radio" name="search" value="Rating" />
+    </label>
+    <label>
+      Sort By: Popular With Kids
+      <input type="radio" name="search" value="Popular With Kids" />
+    </label>
+    <label>
+      Sort By: Popular This Year
+      <input type="radio" name="search" value="Popular This Year" />
+    </label>
+    <button>Submit</button>
+
+</form>
+
+
+
 <ul id="popularMovies">
     <% popularMovies.forEach(movie => { %>
       <div id="imgcontain">
@@ -17,3 +26,6 @@
       </div>
     <% }) %>
   </ul>
+
+  
+ 
