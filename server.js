@@ -141,6 +141,7 @@ function PopularMovies(data) {
   this.image_url =
     'https://image.tmdb.org/t/p/w370_and_h556_bestv2/' + data.poster_path;
   this.description = data.overview;
+  this.stars = Math.round(data.vote_average / 2);
 }
 
 //save movie function

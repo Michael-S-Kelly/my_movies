@@ -1,20 +1,22 @@
-#foottitle {
+#footnav{
   text-align: left;
   padding-left: 3vw;
   color: #ffa500;
+  font-size: 2.5vw;
+  padding-top: .5vw;
 }
-footer {
-  width: 100%;
-  height: 10vw;;
-  background-color: #222;
-  font-size: 2vw;
-  padding-top: 1vw;
+#footcontain {
+  position: fixed;
   display: flex;
-}
-#footer {
-  text-align: left;
-  padding: 2vw;
-}
+  width: 100%;
+  height: 12vw;
+  background-color: #222;;
+  bottom: 0px;
+  }
+  footer {
+    height: auto !important;
+    min-height: 100%;
+  }
 
 
 /* #footnav{
@@ -27,22 +29,24 @@ footer {
 
 /* greater than mobile - desktop view */
 @media screen and (min-width: 960px) {
-  #foottitle {
+  #footnav{
     text-align: left;
     padding-left: 3vw;
     color: #ffa500;
-  }
-  footer {
-    width: 100%;
-    height: 7vw;;
-    background-color: #222;
     font-size: 1.5vw;
     padding-top: 0;
+  }
+  #footcontain {
+    position: relative;
     display: flex;
-  }
-  #footer {
-    text-align: left;
-    padding: 2vw;
-  }
+    width: 100%;
+    height: 6.5vw;
+    background-color: #222;;
+    bottom: 0px;
+    }
+    footer {
+      height: auto !important;
+      min-height: 100%;
+    }
   
 }

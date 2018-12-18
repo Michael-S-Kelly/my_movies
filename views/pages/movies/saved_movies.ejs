@@ -8,7 +8,7 @@
     <%- include('../../layout/header') %>
     <div id="subTitle"></div>
   </header>
-  <main id="mainContent">
+  <main id="homeContent">
     <section>
       <ul id="savedMovies">
           <% savedMovies.forEach(movie => { %>
@@ -17,15 +17,14 @@
               <img id="savedimage" src="<%= movie.image_url %>">
               <h3 id="savedmtitle"><%= movie.title %></h3>
               <form action="<%= `/details/${movie.id}` %>" method="get">
-                <button class="view-details">View Details</button>
+                <button id= "viewdeets" class="view-details">View Details</button>
               </form>
             </div>
             <% }) %>
         </ul>
     </section>
   </main>
-  <footer>
-  </footer>
+  <%- include('../../layout/footer') %>
   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
   <script src="../../../public/scripts/app.js"></script>
 </body>
