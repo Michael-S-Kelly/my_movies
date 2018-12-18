@@ -1,5 +1,13 @@
+#subTitle {
+  width: 100vw;
+  color: red;
+  background-color: silver;
+  
+}
+
 #mainStuff {
   background-color: #000000;
+  width: 100vw;
 }
 
 #group>img {
@@ -9,16 +17,64 @@
   width: 75vw;
 }
 
+.holly {
+  position: relative;
+  top: 16vw;
+  left: 6vw;
+  width: 40vw;
+  height: 37.5vw;
+  margin-bottom: 15vw;
+}
+
 .star {
   position: relative;
-  top: 12vw;
-  left: 2vw;
+  top: 0vw;
+  left: 0vw;
   width: 40vw;
+}
+
+@keyframes spinningStar {
+  from {transform: rotate(0deg);}
+  to {transform: rotate(360deg);}
+}
+
+.holly:hover>.star{
+  transform: rotate(0deg);
+  transform-origin: 19.5vw 21vw;
+  animation-name: spinningStar;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 
 #natePhoto {
   position: relative;
-  top: 12vw;
-  left: 2vw;
-  width: 40vw;
+  top: -27vw;
+  left: 9.2vw;
+  width: 21vw;
+  border-radius: 13vw;
+}
+
+#claricePhoto {
+  position: relative;
+  top: -25vw;
+  left: 9.2vw;
+  width: 21vw;
+  border-radius: 13vw;
+}
+
+#jasonPhoto {
+  position: relative;
+  top: -27vw;
+  left: 9.2vw;
+  width: 21vw;
+  border-radius: 13vw;
+}
+
+#mikePhoto {
+  position: relative;
+  top: -27vw;
+  left: 9.2vw;
+  width: 21vw;
+  border-radius: 13vw;
 }
