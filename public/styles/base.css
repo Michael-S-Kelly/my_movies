@@ -44,7 +44,12 @@ body {
   font-weight: bold;
   
 }
-
+#poptitle {
+    padding-left: 3vw;
+    font-size: 6vw;
+    color: #ffa500;
+    margin-bottom: 1vw;
+}
 /* Search page layout */
 
 .searches {
@@ -73,7 +78,7 @@ body {
   -webkit-background-size: cover; 
   background-size: cover;
   text-align: center;
-  padding-left: 1.3vw;
+  /* padding-left: 1.3vw; */
   
 }
 #popularMovies {
@@ -84,7 +89,7 @@ body {
 }
 #imgcontain {
   text-align: center;
-  width: 20.85vw;
+  width: 21vw;
   height: 13vw;
   margin-bottom: 32vw;
 }
@@ -94,11 +99,20 @@ body {
 }
 #listimage {
   height: 30vw;
+  margin-left:1.7vw;
 }
 #homemtitle {
   font-size: 3vw;
   font-weight: bold;
-  
+  }
+  #poptitle {
+    text-align: center;
+    height: 4.5vw;
+    padding-left: 0;
+    font-size: 4vw;
+    color: #00eeff;
+    margin-bottom: 1vw;
+    background-color: #666;
 }
 /* home page layout */
 }
