@@ -37,8 +37,8 @@
   left: 6vw;
   width: 40vw;
   height: 37.5vw;
-  margin-bottom: -20vw;
   z-index: 5;
+  margin-bottom: 4vw;
 }
 
 .star {
@@ -61,6 +61,7 @@
   animation-timing-function: linear;
   animation-iteration-count: infinite;
 }
+
 
 #natePhoto {
   position: relative;
@@ -106,8 +107,9 @@ h3 {
 
 .inDet {
   position: relative;
-  top: 13vw;
+  top: -10vw;
   left: 0vw;
+  height: 15vw;
   color: white;
 }
 
