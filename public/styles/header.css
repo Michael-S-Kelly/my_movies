@@ -85,6 +85,12 @@ a:hover {
   z-index: 1;
   transform-origin: 4px 0px;
 }
+#headstar {
+  float: left;
+  height: 3vw;
+}
+
+
 
 /* greater than mobile - desktop view */
 @media screen and (min-width: 960px) {

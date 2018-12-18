@@ -40,3 +40,19 @@ mainTitleEl.appendChild(nightEl);
 mainTitleEl.appendChild(navEl);
 mainTitleEl.appendChild(logoEl);
 //===================================================================================
+
+
+// trigger ///
+
+let konamikeys =[];
+let konami = "38,38,40,40,37,39,37,39,66,65";
+
+$(document).keydown(function(event) {
+  konamikeys.push(event.keycode);
+  if(konamikeys.toString().indexOf(konami) => 0) {
+    $(document).unbind('keydown', arguments.callee);
+
+    $("body").addClass("konami");
+
+  }
+})

@@ -13,7 +13,7 @@ body {
 
 /* home image container */
 #homeContent {
-  padding-top: 8.2vw;
+  padding-top: 13.5vw;
   margin: 0 auto;
   width: 85vw;
   background: url(images/curtain1.png) no-repeat center center fixed;
@@ -333,6 +333,12 @@ body {
     margin-left: 3vw;
     float: left;
   }
+
+  /* star rating */
+
+  #star-image {
+    height: 2vw;
+  }
 /* Search page layout */
 
 #searchcontain {
@@ -384,10 +390,11 @@ body {
 /* results page layout */
 
 #resultstitle {
+  padding-top: .5vw;
     text-align: center;
-    height: 4.5vw;
+    height: 3.5vw;
     padding-left: 0;
-    font-size: 4vw;
+    font-size: 2.5vw;
     color: #00eeff;
     margin-bottom: 1vw;
     background-color: #666;
