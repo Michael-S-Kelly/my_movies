@@ -1,12 +1,12 @@
 #headtitle {
   text-align: left;
   padding-left: 3vw;
-  color: #fff;
+  color: #ffa500;
 }
 header {
   width: 100%;
   height: 10vw;;
-  background-color: #000;
+  background-color: #222;
   font-size: 6vw;
   padding-top: 5vw;
 }
@@ -77,4 +77,86 @@ a:hover {
   border-radius: 3px;
   z-index: 1;
   transform-origin: 4px 0px;
+}
+
+/* greater than mobile - desktop view */
+@media screen and (min-width: 960px) {
+  #headtitle {
+    text-align: left;
+    padding-left: 3vw;
+    color: #00eeff;
+  }
+  header {
+    width: 100%;
+    height: 8vw;;
+    background-color: #222;
+    font-size: 6vw;
+    /* padding-top: 5vw; */
+  }
+  #headcontain {
+    text-align: left;
+  }
+  a {
+  text-decoration: none;
+  color: #fff;
+  transition: none;
+  }
+  a:hover {
+    color: #000;
+  }
+  #nav{
+    position: relative;
+    width: 380px;
+    margin: 0 0 0 0;
+    /* top right left bottom */
+    opacity: 1;
+    background: none;
+    border-radius: .5em;
+    list-style-type: none;
+    transform-origin: 0% 0%;
+    transform: none;
+    transition: none;
+    }
+    
+    #nav li {
+    padding: 3px 0;
+    font-size: 22px;
+    }
+    #navToggle input:checked ~ ul {
+    transform: none;
+    }
+    #navToggle {
+    display: block;
+    position: relative;
+    padding-right: 10px;
+    float: right;
+    right: 10px;
+    z-index: 1;
+  }
+  
+  #navToggle input {
+    display: block;
+    width: 40px;
+    height: 32px;
+    position: absolute;
+    top: -7px;
+    right: -5px;
+    cursor: pointer;
+    opacity: 0;
+    z-index: 2;
+  }
+  
+  #navToggle span {
+    display: none;
+    /* width: 33px;
+    height: 4px;
+    margin-bottom: 5px;
+    position: relative;
+    background: #fff;
+    border-radius: 3px;
+    z-index: 1;
+    transform-origin: 4px 0px; */
+  }
+
+  /* additions */
 }
