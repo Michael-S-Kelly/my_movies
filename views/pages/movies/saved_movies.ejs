@@ -8,7 +8,7 @@
     <%- include('../../layout/header') %>
     <div id="subTitle"></div>
   </header>
-  <main id="mainContent">
+  <main id="homeContent">
     <section>
       <ul id="savedMovies">
           <% savedMovies.forEach(movie => { %>
@@ -17,7 +17,7 @@
               <img id="savedimage" src="<%= movie.image_url %>">
               <h3 id="savedmtitle"><%= movie.title %></h3>
               <form action="<%= `/details/${movie.id}` %>" method="get">
-                <button class="view-details">View Details</button>
+                <button id= "viewdeets" class="view-details">View Details</button>
               </form>
             </div>
             <% }) %>

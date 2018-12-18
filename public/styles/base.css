@@ -2,8 +2,8 @@
   box-sizing: border-box;
 }
 body {
-  margin-left: 7vw;
-  margin-right: 6vw;
+  /* margin-left: 7vw;
+  margin-right: 6vw; */
   background: url(images/corn1.jpg) no-repeat center center fixed;
   -webkit-background-size: cover; 
   background-size: cover;
@@ -13,7 +13,9 @@ body {
 
 /* home image container */
 #homeContent {
-  width: 100%;
+  padding-top: 8.2vw;
+  margin: 0 auto;
+  width: 85vw;
   background: url(images/curtain1.png) no-repeat center center fixed;
   -webkit-background-size: cover; 
   background-size: cover;
@@ -28,30 +30,31 @@ body {
 }
 #imgcontain {
   text-align: center;
-  width: 20.85vw;
-  height: 30vw;
-  margin-bottom: 5vw;
+  width: 85vw;
+  height: 90%;
+  margin-top: 1vw;
 }
 .homemovies {
-  height: 29vw;
-  /* padding-bottom: 3vw; */
+  height: 90vw;
+  padding-bottom: 1vw;
   border-radius: .3em;
 }
 #listimage {
-  height: 30vw;
+  height: 90vw;
 }
 #homemtitle {
-  font-size: 3vw;
+  font-size: 1vw;
   font-weight: bold;
   height: 3vw;
-  text-overflow: ellipsis;
+  /* text-overflow: ellipsis;
   overflow: hidden;
-  white-space: nowrap;
+  white-space: nowrap; */
   
 }
 #poptitle {
-    padding-left: 3vw;
-    font-size: 6vw;
+    padding-top: 1vw;
+    padding-left: 0vw;
+    font-size: 3.5vw;
     color: #ffa500;
     margin-bottom: 1vw;
 }
@@ -73,6 +76,7 @@ body {
 #searchcontain {
   display: flex;
   margin-left: 8vw;
+  border-radius: .3em;
   border: solid #00eeff;
   background-color: #888;
   width: 70vw;
@@ -150,9 +154,7 @@ margin-bottom: 3vw;
 margin-left: 5vw;
 background-color: #00eeff;
 }
-.homemovies {
-height: 29vw;
-}
+
 #resultsimage {
   margin-top:1vw;
 height: 60vw;
@@ -204,22 +206,74 @@ padding-left: 2vw;
 .results-form {
   /* padding-top: 2vw; */
 }
+
+  /* My Movies Page */
+
+  #savedMovies{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-left:2vw;
+    margin-top: 2vw;
+  }
+
+  #savedcontain {
+    border-radius: .3em;
+    text-align: center;
+    width: 70vw;
+    height: 90%;
+    margin-bottom: 3vw;
+    margin-left: 5vw;
+    background-color: #00eeff;
+  }
+  #savedlistl {
+
+  }
+
+  #savedimage {
+    margin-top: .5vw;
+    height: 70vw;
+    border-radius: .3em;
+  }
+
+  #savedmtitle {
+    font-size: 4.5vw;
+    font-weight: bold;
+    height: 6vw;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+#viewdeets {
+  background-color: #fff;
+  color: #000;
+  border-radius: .5em;
+  width: 35%;
+  margin-bottom: .5vw;
+  margin-right: 1vw;
+  margin-left: 1vw;
+  padding-top: 1.5vw;
+  padding-bottom: 1.5vw;
+  font-size: 3vw;
+}
 /* greater than mobile - desktop view */
 @media screen and (min-width: 960px) {
 body {
-  margin-left: 7vw;
-  margin-right: 6vw;
   background: url(images/corn1.jpg);
   /* background-size: contain; */
   background-attachment: fixed;
-  margin-top: 5vw;
-  margin-bottom: 3vw;
+  /* margin-top: 5vw;
+  margin-bottom: 3vw; */
   color: #00eeff;
 }
 
 /* Home page */
 #homeContent {
-  width: 100%;
+  padding-top: 4.25vw;
+  margin: 0 auto;
+  width: 85vw;
   background: url(images/curtain1.png) no-repeat center center fixed;
   -webkit-background-size: cover; 
   background-size: cover;
@@ -236,11 +290,12 @@ body {
   text-align: center;
   width: 21vw;
   height: 30vw;
-  margin-bottom: 3vw;
+  margin-bottom: .5vw;
 }
 .homemovies {
   height: 29vw;
   border-radius: .3em;
+  padding-bottom: 0vw;
 }
 #listimage {
   height: 30vw;
@@ -255,12 +310,13 @@ body {
   white-space: nowrap;
   }
   #poptitle {
+    padding-top: .5vw;
     text-align: center;
-    height: 4.5vw;
+    height: 3.5vw;
     padding-left: 0;
-    font-size: 4vw;
+    font-size: 2.5vw;
     color: #00eeff;
-    margin-bottom: 1vw;
+    margin-bottom: 1.5vw;
     background-color: #666;
     margin-bottom: 2vw;
   }
@@ -406,5 +462,57 @@ body {
   .results-form {
     /* padding-top: 2vw; */
   }
+
+  /* My Movies Page */
+
+  #savedMovies{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-left:2vw;
+    margin-top: 2vw;
+  }
+
+  #savedcontain {
+    border-radius: .3em;
+    text-align: center;
+    width: 25vw;
+    height: 80%;
+    margin-bottom: 3vw;
+    margin-left: 1.5vw;
+    background-color: #ffa500;
+  }
+  #savedlistl {
+
+  }
+
+  #savedimage {
+    margin-top: .5vw;
+    height: 90%;
+    border-radius: .3em;
+  }
+
+  #savedmtitle {
+    font-size: 2vw;
+    font-weight: bold;
+    height: 3vw;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+#viewdeets {
+  background-color: #fff;
+  color: #000;
+  border-radius: .5em;
+  width: 30%;
+  margin-bottom: .5vw;
+  margin-right: 1vw;
+  margin-left: 1vw;
+  padding-top: .5vw;
+  padding-bottom: .5vw;
+  font-size: 1vw;
+}
 
 }
