@@ -34,6 +34,12 @@
     <form action="/delete/<%= movie.id %>" method="post">
       <button type="submit">Delete Movie</button>
     </form>
+    <section class="reviews">
+        <section>
+          <p><%= movie.username %></p>
+          <p><%= movie.review %></p>
+        </section>
+    </section>
     <form action="<%- `/details/${movie.id}` %>" method="post">
       <lable><input type="text" name="username" placeholder="userName" value="userName"></lable>
       <input type="hidden" name="created_at" value=" <%= Date.now() %>"/>
