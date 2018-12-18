@@ -29,8 +29,8 @@ body {
 #imgcontain {
   text-align: center;
   width: 20.85vw;
-  height: 13vw;
-  margin-bottom: 32vw;
+  height: 30vw;
+  margin-bottom: 5vw;
 }
 .homemovies {
   height: 29vw;
@@ -42,9 +42,18 @@ body {
 #homemtitle {
   font-size: 3vw;
   font-weight: bold;
+  height: 3vw;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
   
 }
-
+#poptitle {
+    padding-left: 3vw;
+    font-size: 6vw;
+    color: #ffa500;
+    margin-bottom: 1vw;
+}
 /* Search page layout */
 
 .searches {
@@ -63,7 +72,7 @@ body {
   background: url(images/corn1.jpg);
   /* background-size: contain; */
   background-attachment: fixed;
-  margin-top: 6vw;
+  margin-top: 5vw;
   margin-bottom: 3vw;
   color: #00eeff;
 }
@@ -73,7 +82,6 @@ body {
   -webkit-background-size: cover; 
   background-size: cover;
   text-align: center;
-  padding-left: 1.3vw;
   
 }
 #popularMovies {
@@ -84,21 +92,44 @@ body {
 }
 #imgcontain {
   text-align: center;
-  width: 20.85vw;
-  height: 13vw;
-  margin-bottom: 32vw;
+  width: 21vw;
+  height: 30vw;
+  margin-bottom: 3vw;
 }
 .homemovies {
   height: 29vw;
-  /* padding-bottom: 3vw; */
 }
 #listimage {
   height: 30vw;
+  margin-left:1.7vw;
 }
 #homemtitle {
-  font-size: 3vw;
+  font-size: 2vw;
   font-weight: bold;
-  
+  height: 3vw;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  }
+  #poptitle {
+    text-align: center;
+    height: 4.5vw;
+    padding-left: 0;
+    font-size: 4vw;
+    color: #00eeff;
+    margin-bottom: 1vw;
+    background-color: #666;
+    margin-bottom: 2vw;
+  }
+
+/* Search page layout */
+
+.searches {
+  width: 100%;
+  height: 500px;
+  background: url(images/curtain1.png) no-repeat center center fixed;
+  -webkit-background-size: cover; 
+  background-size: cover;
+  text-align: center;
 }
-/* home page layout */
 }
