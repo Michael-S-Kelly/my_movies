@@ -47,9 +47,11 @@ app.set('view engine', 'ejs');
 app.post('/show', getResults);
 //app.get('/movies', getResults);
 app.post('/mymovies', saveResults);
-app.get('/mymovies', getSavedMovies)
+app.get('/mymovies', getSavedMovies);
 
+app.post('/details/:id', saveReviews);
 app.get('/details/:id', getDetails);
+
 
 app.post('/delete/:id', deleteMovie);
 
@@ -152,10 +154,21 @@ function getSavedMovies(request, response){
     .catch(err => console.error(err));
 }
 
+function saveReviews(request, response) {
+  console.log('save reviews is firing');
+  let {username, review, created_at, movie_id} = request.body;
+  let SQL = `INSERT INTO reviews (username, review, created_at, movie_id) VALUES($1,$2,$3,$4) RETURNING id;`;
+  let values = [username, review, created_at, movie_id];
+  client.query(SQL, values)
+    .then(response.redirect('/mymovies'))
+    .catch(err => errorHandler(err, response));
+}
+
 
 function getDetails(request, response) {
   console.log('running getDetails');
-  let SQL = 'SELECT * FROM movies WHERE id=$1;';
+  let SQL = 'SELECT * FROM movies INNER JOIN reviews ON movies.id = movie_id WHERE movies.id=$1;';
+  // let SQL = 'SELECT * FROM movies WHERE id=$1;';
   let values = [request.params.id];
 
   return client.query(SQL, values)

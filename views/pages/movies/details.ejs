@@ -1,38 +1,52 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <%- include('../../layout/head') %>
+  <%- include('../../layout/head') %>
 </head>
+
 <body id="bodyStuff">
   <header>
     <%- include('../../layout/header') %>
     <div id="subTitle"></div>
   </header>
   <main id="mainStuff">
-      <img src="<%= movie.image_url %>">
-      <h3><%= movie.title %></h3>
-      <p>Overview: <%= movie.overview %></p>
-      <p> Released On: <%= movie.released_on %></p>
-      <p> Popularity: <%= movie.popularity %></p>
-      <form target="_blank"
-      action="http://www.amazon.com/exec/obidos/external-search"
-      [RETURN]
-      method="get"
-   >
-  <input type="hidden" name="mode" value="blended" />
-  <input type="hidden" name="tag" value="insert associate tag" /> Search
-    Amazon:<br />
-  <input
-    type="text"
-    name="keyword"
-    size="10"
-    value="<%= movie.title %>"
- />
- <input type="submit" value="Go" />
-</form>
-<form action="/delete/<%= movie.id %>" method="post">
-  <button type="submit">Delete Movie</button>
-</form>
+    <img src="<%= movie.image_url %>">
+    <h3>
+      <%= movie.title %>
+    </h3>
+    <p>Overview:
+      <%= movie.overview %>
+    </p>
+    <p> Released On:
+      <%= movie.released_on %>
+    </p>
+    <p> Popularity:
+      <%= movie.popularity %>
+    </p>
+    <form target="_blank" action="http://www.amazon.com/exec/obidos/external-search" [RETURN] method="get">
+      <input type="hidden" name="mode" value="blended" />
+      <input type="hidden" name="tag" value="insert associate tag" /> Search
+      Amazon:<br />
+      <input type="text" name="keyword" size="10" value="<%= movie.title %>" />
+      <input type="submit" value="Go" />
+    </form>
+    <form action="/delete/<%= movie.id %>" method="post">
+      <button type="submit">Delete Movie</button>
+    </form>
+    <section class="reviews">
+        <section>
+          <p><%= movie.username %></p>
+          <p><%= movie.review %></p>
+        </section>
+    </section>
+    <form action="<%- `/details/${movie.id}` %>" method="post">
+      <lable><input type="text" name="username" placeholder="userName" value="userName"></lable>
+      <input type="hidden" name="created_at" value=" <%= Date.now() %>"/>
+      <lable><input type="text" name="review" placeholder="Your Review Here" value="review" /></lable>
+      <input type="hidden" name="movie_id" value="<%- movie.id %>"/>
+      <button type=submit>Add Review</button>
+    </form>
   </main>
   <footer>
 
@@ -40,4 +54,5 @@
   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
   <script src="../../public/scripts/app.js"></script>
 </body>
+
 </html>
