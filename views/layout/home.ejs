@@ -23,20 +23,18 @@
       <input type="radio" name="search" value="Popular This Year" />
     </label>
     <button>Submit</button>
-
 </form>
 
 <ul id="popularMovies">
     <% popularMovies.forEach(movie => { %>
       <div id="imgcontain">
         <li  id="listimage" data-id="<%= popularMovies.id %>">
-        <img class="homemovies" src="<%= movie.image_url %>">
-        <!-- <h3 id="homemtitle"><%= movie.title %></h3> -->
-    <div id="star-rating">
-      <% for(let i=0; i < movie.stars; i++) { %>
-      <img id="star-image" src="../styles/images/star1.png">
-    <% }%>
-      </div>
+          <div id="star-rating">
+            <% for(let i=0; i < movie.stars; i++) { %>
+              <img id="star-image" src="../styles/images/star1.png">
+              <% }%>
+            </div>
+            <img class="homemovies" src="<%= movie.image_url %>">
     </div>
         </li>
       </div>

@@ -9,6 +9,16 @@
     <div id="subTitle"></div>
   </header>
   <main id="homeContent">
+      <div id="searchcontain">
+          <img class="projector" src="../../styles/images/projector.jpg">
+          <form class="search-form" action="/show" method="post">
+            <label id="labelSearch">Movie Search: 
+              <input type="text" name="movieSearch" id="movieSearch"/> 
+            </label>
+            <button id="searchbut">Submit</button>
+          </form>
+        </div>
+        <h2 id="poptitle">My Saved Movies</h2>
     <section>
       <ul id="savedMovies">
           <% savedMovies.forEach(movie => { %>
