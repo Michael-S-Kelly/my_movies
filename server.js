@@ -109,7 +109,7 @@ function getPopularMovies(req, res){
     .then(result => {
       res.render('../views/pages/index', {popularMovies: result,});
     })
-    .catch(err => errorHandler(err, res));
+    // .catch(err => errorHandler(err, res));
 }
 //fetch function
 let fetchPopularMovies = (input => {
