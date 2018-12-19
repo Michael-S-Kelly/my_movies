@@ -536,12 +536,26 @@ body {
 .homemovies {
   height: 29vw;
 }
+
+/*=========Image Hover========*/
+.homemovies:hover {
+  height: 31vw;
+}
+/*============================*/
+
 #resultsimage {
   margin-top:1vw;
   height: 20vw;
   margin-left:1.7vw;
   border-radius: .3em;
 }
+
+/*=========Image Hover========*/
+#resultsimage:hover {
+  height: 21vw;
+}
+/*============================*/
+
 .resultstitle{
   font-size: 1.5vw;
   font-weight: bold;
@@ -575,13 +589,22 @@ body {
     background-color: #fff;
     color: #000;
     border-radius: .5em;
-    width: 40%;
+    width: 9vw;
+    height: 2.5vw;
     margin-top: 1vw;
     margin-bottom: 1vw;
     padding-top: .5vw;
     padding-bottom: .5vw;
     font-size: 1vw;
   }
+
+  /*=========Image Hover========*/
+  .savebut:hover {
+    height: 3vw;
+    margin-top: 1.5vw;
+  }
+  /*============================*/
+
   .results-form {
     /* padding-top: 2vw; */
   }
