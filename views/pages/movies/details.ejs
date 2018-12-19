@@ -1,29 +1,24 @@
 <!DOCTYPE html>
 <html>
-
-<head>
   <%- include('../../layout/head') %>
-</head>
-
 <body id="bodyStuff">
-  <header>
     <%- include('../../layout/header') %>
-    <div id="subTitle"></div>
-  </header>
-  <main id="mainStuff">
-    <img src="<%= movie.image_url %>">
-    <h3>
-      <%= movie.title %>
-    </h3>
-    <p>Overview:
-      <%= movie.overview %>
-    </p>
-    <p> Released On:
-      <%= movie.released_on %>
-    </p>
-    <p> Popularity:
-      <%= movie.popularity %>
-    </p>
+  <main id="homeContent">
+      <%- include('../../layout/search') %>
+    <div class="details-contain">
+      <div id="deet-image-contain">
+    <img id="detailsimage" src="<%= movie.image_url %>">
+    </div>
+    <div class="star-rating-results">
+      <% for(let i=0; i < movie.stars; i++) { %>
+      <img class="star-image-results" src="../styles/images/star1.png">
+      <% }%>
+    </div>
+    <h3 class="detailstitle"> <%= movie.title %> </h3>
+    <p id="overviewdeets">Overview: <%= movie.overview %> </p>
+    <p id="releaseddeets"> Released On:<%= movie.released_on %> </p>
+    <p id="popdetails"> Popularity: <%= movie.popularity %> </p>
+
     <form target="_blank" action="http://www.amazon.com/exec/obidos/external-search" [RETURN] method="get">
       <input type="hidden" name="mode" value="blended" />
       <input type="hidden" name="tag" value="insert associate tag" /> Search
@@ -42,6 +37,7 @@
     </section>
 
     <form action = "<%= `/details/${movie.id}` %>"  method = "post">
+
       <input type="hidden" name="_method" value="<%-'put' %>">
       <label><input type="hidden" name="title" value="<%= movie.title %>" placeholder="<%= movie.title %>"/> </label>
       <label>Overview: <input type="text" name="overview" value="<%= movie.overview %>" placeholder="<%= movie.overview %>"/> </label>

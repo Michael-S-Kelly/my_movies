@@ -1,40 +1,12 @@
 <!DOCTYPE html>
 <html>
-
   <%- include('../../layout/head') %>
-
 <body>
-  
-    <%- include('../../layout/header') %>
+      <%- include('../../layout/header') %>
  <main id="homeContent">
-    <div id="searchcontain">
-        <img class="projector" src="../../styles/images/projector.jpg">
-        <form class="search-form" action="/show" method="post">
-          <label id="labelSearch">Movie Search: 
-            <input type="text" name="movieSearch" id="movieSearch"/> 
-          </label>
-          <button id="searchbut">Submit</button>
-        </form>
-      </div>
+    <%- include('../../layout/search') %>
       <h2 id="poptitle">Popular Movies</h2>
-<form action = "/sort" method = "post" name="selectSort">
-    See Movies By: Rating
-    <input type="radio" name="search" value="Rating" />
-  </label>
-  <label>
-    See Movies By: Popular With Kids
-    <input type="radio" name="search" value="Popular With Kids" />
-  </label>
-  <label>
-    See Movies By: Popular This Year
-    <input type="radio" name="search" value="Popular This Year" />
-  </label>
-  <button>Submit</button>
-
-</form>
-
-
-
+      <%- include('../../layout/sort-component') %>
 <ul id="popularMovies">
     <% sortedMovies.forEach(movie => { %>
       <div id="imgcontain">
@@ -49,7 +21,6 @@
       </div>
     <% }) %>
   </ul>
-
 </main>
 <%- include('../../layout/footer') %>
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>

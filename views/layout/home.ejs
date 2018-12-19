@@ -1,30 +1,3 @@
-
-<div id="searchcontain">
-  <img class="projector" src="../../styles/images/projector.jpg">
-  <form class="search-form" action="/show" method="post">
-    <label id="labelSearch">Movie Search: 
-      <input type="text" name="movieSearch" id="movieSearch"/> 
-    </label>
-    <button id="searchbut">Submit</button>
-  </form>
-</div>
-<h2 id="resultstitle">Popular Movies</h2>
-
-<form action = "/sort" method = "post" name="selectSort">
-      Sort By: Rating
-      <input type="radio" name="search" value="Rating" />
-    </label>
-    <label>
-      Sort By: Popular With Kids
-      <input type="radio" name="search" value="Popular With Kids" />
-    </label>
-    <label>
-      Sort By: Popular This Year
-      <input type="radio" name="search" value="Popular This Year" />
-    </label>
-    <button id="sortbut">Sort</button>
-</form>
-
 <ul id="popularMovies">
     <% popularMovies.forEach(movie => { %>
       <div id="imgcontain">

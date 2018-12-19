@@ -120,7 +120,7 @@ body {
   padding-bottom:5px;
 }
 #searchbut {
-  background-color: #fff;
+  opacity: 0;
   color: #000;
   border-radius: .5em;
   width: 25%;
@@ -132,6 +132,11 @@ body {
   padding-right: .5vw;
   /* padding: 1vw;  */
   font-weight: bold;
+}
+#glasses {
+  background: url(images/glasses1.png) center no-repeat;
+  width: 10vw;
+  border-radius: .3em;
 }
 #movieSearch {
   padding-top: .5vw;
@@ -455,6 +460,7 @@ body {
 
 #searchcontain {
   display: flex;
+  flex-direction: row;
   margin-left: 18vw;
   border: .5px solid orange;
   box-shadow: .3vw 0 0 .5vw  #000;
@@ -477,31 +483,42 @@ body {
   height: 7vw;
 }
 .search-form {
+  display: flex;
+  flex-direction: row;
   padding-left:0;
   margin-top:2vw;
   font-size: 1.75vw;
   width: 100%;
 }
 #searchbut {
-  background-color: #fff;
+  opacity: 0;
   color: #000;
   border-radius: .5em;
-  width: 30%;
-  margin-right: 1vw;
-  margin-left: 1vw;
-  padding-top: .5vw;
+  width: 100%;
+  margin-right: 0;
+  margin-left: 0;
+  padding-top: 0;
   padding-bottom: .5vw;
   font-size: 1vw;
 }
 #movieSearch {
   padding-top: .5vw;
   padding-bottom: .5vw;
-  width: 15vw;
+  width: 10vw;
   border-radius: .5em;
 }
-/* #labelSearch {
-  padding-top: 3.5vw;
-} */
+#glasses {
+  background: url(images/glasses1.png) center no-repeat;
+  width: 9vw;
+  border-radius: .3em;
+  height: 2.2vw;
+}
+#glasses:hover {
+  height: 2.7vw;
+ }
+#labelSearch {
+  padding-left: 2vw;
+}
 
 /* results page layout */
 
