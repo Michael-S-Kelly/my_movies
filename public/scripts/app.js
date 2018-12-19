@@ -59,7 +59,7 @@ console.log('app.js is running');
 // })
 
 //toggle details
-$('body').on('click', 'img', function(event) {
+$('body').on('click', '.details-container', function(event) {
   console.log('pop is running')
   $('.pop-details').toggleClass('pop-hide')
 })

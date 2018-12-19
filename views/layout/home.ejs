@@ -27,6 +27,7 @@
 
 <ul id="popularMovies">
     <% popularMovies.forEach(movie => { %>
+      <section class='details-container'>
       <div id="imgcontain">
         <li  id="listimage" data-id="<%= popularMovies.id %>">
           <div id="star-rating">
@@ -38,12 +39,24 @@
     </div>
   </li>
     <section class="pop-details pop-hide">
-      <p><%= movie.title %> </p>
-      <p><%= movie.popularity %> </p>
+        <form class ="results-form" action="/mymovies" method = "post">
+          <input type="hidden" value="<%= movie.title %>" name="title">
+          <input type="hidden" value="<%= movie.popularity %>" name="popularity">
+          <input type="hidden" value="<%= movie.overview %>" name="overview">
+          <input type="hidden" value="<%= movie.released_on %>" name="released_on">
+          <input type="hidden" value="<%= movie.image_url%>" name="image_url">
+          <input type="hidden" value="<%= movie.stars %>" name="stars">
+          <button class="savebut" type="submit">Save Movie</button>
+        </form>
+      <h3><%= movie.title %> </h3>
+      <p>Popularity: <%= movie.popularity %> </p>
+      <p> Released On: <%= movie.released_on %></p>
       <p> <%= movie.overview %></p>
     </section>
       </div>
+    </section>
     <% }) %>
+
   </ul>
 
   
