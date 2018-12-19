@@ -4,6 +4,7 @@
 <body>
     <%- include('../../layout/header') %>
   <main id="homeContent">
+      <%- include('../../layout/search') %>
     <div class="details-contain">
       <div id="deet-image-contain">
     <img id="detailsimage" src="<%= movie.image_url %>">
@@ -33,7 +34,6 @@
           <p><%= movie.review %></p>
         </section>
     </section>
-
     <form action = "<%= `/details/${movie.id}`%>"  method = "post">
       <input type="hidden" name="_method" value="<%-'put' %>">
       <label>Title: <input type="text" name="title" value="<%= movie.title %>" placeholder="<%= movie.title %>"/> </label>

@@ -120,7 +120,7 @@ body {
   padding-bottom:5px;
 }
 #searchbut {
-  background-color: #fff;
+  opacity: 0;
   color: #000;
   border-radius: .5em;
   width: 25%;
@@ -132,6 +132,11 @@ body {
   padding-right: .5vw;
   /* padding: 1vw;  */
   font-weight: bold;
+}
+#glasses {
+  background: url(images/glasses2.png) center;
+  width: 10vw;
+  border-radius: .3em;
 }
 #movieSearch {
   padding-top: .5vw;

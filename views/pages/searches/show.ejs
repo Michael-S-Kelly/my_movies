@@ -4,15 +4,7 @@
 <body>
   <%- include('../../layout/header') %>
 <main id="homeContent">
-    <div id="searchcontain">
-    <img class="projector" src="../../styles/images/projector.jpg">
-    <form class="search-form" action="/show" method="post">
-      <label id="labelSearch">Movie Search: 
-        <input type="text" name="movieSearch" id="movieSearch"/> 
-      </label>
-      <button id="searchbut">Submit</button>
-    </form>
-  </div>
+    <%- include('../../layout/search') %>
   <h2 id="resultstitle"> Search Results</h2>
   <section class ="all-api-movies" id ="test">
       <% renderedMovies.forEach( data => { %>
