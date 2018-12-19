@@ -124,17 +124,17 @@
             <section class="updatemovies pop-hide">
               <form action="<%= `/details/${movie.id}` %>" method="post">
                 <input type="hidden" name="_method" value="<%-'put' %>">
-                <label><input type="hidden" name="title" value="<%= movie.title %>" placeholder="<%= movie.title %>" />
+                <label><input type="hidden" name="title" value="<%= movie[0].title %>" placeholder="<%= movie[0].title %>" />
                 </label>
-                <label>Overview: <input type="text" name="overview" value="<%= movie.overview %>" placeholder="<%= movie.overview %>" />
+                <label>Overview: <input type="text" name="overview" value="<%= movie[0].overview %>" placeholder="<%= movie[0].overview %>" />
                 </label>
-                <label> <input type="hidden" name="Released On" value="<%= movie.released_on %>" placeholder="<%= movie.released_on %>" />
+                <label> <input type="hidden" name="Released On" value="<%= movie[0].released_on %>" placeholder="<%= movie[0].released_on %>" />
                 </label>
-                <label>Popularity: <input type="text" name="popularity" value="<%= movie.popularity %>" placeholder="<%= movie.popularity %>" />
+                <label>Popularity: <input type="text" name="popularity" value="<%= movie[0].popularity %>" placeholder="<%= movie[0].popularity %>" />
                 </label>
-                <label> <input type="hidden" name="image_url" value="<%= movie.image_url %>" placeholder="<%= movie.image_url %>" />
+                <label> <input type="hidden" name="image_url" value="<%= movie[0].image_url %>" placeholder="<%= movie[0].image_url %>" />
                 </label>
-                <label>stars: <input type="text" name="stars" value="<%= movie.stars %>" placeholder="<%= movie.stars %>" />
+                <label>stars: <input type="text" name="stars" value="<%= movie[0].stars %>" placeholder="<%= movie[0].stars %>" />
                 </label>
                 <button type=submit>Save Update</button>
               </form>
@@ -145,7 +145,7 @@
               <lable><input type="text" name="username" placeholder="userName" value="userName"></lable>
               <input type="hidden" name="created_at" value=" <%= Date.now() %>" />
               <lable><input type="text" name="review" placeholder="Your Review Here" value="review" /></lable>
-              <input type="hidden" name="movie_id" value="<%- movie.id %>" />
+              <input type="hidden" name="movie_id" value="<%- movie[0].id %>" />
               <button type=submit>Save Review</button>
             </form>
             </section>
