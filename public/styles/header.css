@@ -11,6 +11,8 @@ header {
   background-color: #222;
   font-size: 6vw;
   padding-top: 1vw;
+  z-index: 2;
+  font-family: 'Carter One', cursive;
 }
 #headcontain {
    text-align: left;
@@ -22,11 +24,11 @@ header {
 }
 a {
 text-decoration: none;
-color: #00eeff;
+color: #0072FF;
 transition: color 0.3s ease;
 }
 span {
-  background-color: #00eeff;
+  background-color: #0072FF;
 }
 a:hover {
   color: #ffa500;
@@ -80,7 +82,7 @@ a:hover {
   height: 4px;
   margin-bottom: 5px;
   position: relative;
-  background: #00eeff;
+  background: #0072FF;
   border-radius: 3px;
   z-index: 1;
   transform-origin: 4px 0px;
@@ -99,7 +101,7 @@ a:hover {
     padding-left: 3vw;
     color: #ffa500;
     padding-left: 3vw;
-    color: #00eeff;
+    color: #0072FF;
     font-size: 3vw;
   }
   header {
@@ -110,6 +112,7 @@ a:hover {
     background-color: #222;
     font-size: 6vw;
     padding-top: .5vw;
+    z-index: 2;
   }
   #headcontain {
     text-align: right;
@@ -117,7 +120,7 @@ a:hover {
   }
   a {
   text-decoration: none;
-  color: #00eeff;
+  color: #0072FF;
   transition: none;
   }
   a:hover {

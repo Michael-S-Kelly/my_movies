@@ -13,14 +13,14 @@ CREATE TABLE movies (
   overview TEXT,
   released_on VARCHAR(255),
   image_url VARCHAR(255),
-  created_at BIGINT
+  stars BIGINT
 );
 
 CREATE TABLE reviews (
   id SERIAL PRIMARY KEY,
   username VARCHAR(255),
   review TEXT,
-  created_at BIGINT,
+  stars BIGINT,
   movie_id INTEGER NOT NULL,
   FOREIGN KEY (movie_id) REFERENCES movies (id)
 );

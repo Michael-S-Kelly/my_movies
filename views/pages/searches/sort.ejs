@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <%- include('../../layout/head') %>
-</head>
-<body id="bodyStuff">
-  <header>
-    <%- include('../../layout/header') %>
-    <div id="subTitle"></div>
-  </header>
 
+  <%- include('../../layout/head') %>
+
+<body>
+  
+    <%- include('../../layout/header') %>
+ <main id="homeContent">
+    <div id="searchcontain">
+        <img class="projector" src="../../styles/images/projector.jpg">
+        <form class="search-form" action="/show" method="post">
+          <label id="labelSearch">Movie Search: 
+            <input type="text" name="movieSearch" id="movieSearch"/> 
+          </label>
+          <button id="searchbut">Submit</button>
+        </form>
+      </div>
+      <h2 id="poptitle">Popular Movies</h2>
 <form action = "/sort" method = "post" name="selectSort">
     See Movies By: Rating
     <input type="radio" name="search" value="Rating" />
@@ -27,20 +35,23 @@
 
 
 
-<ul id="sortedMovies">
+<ul id="popularMovies">
     <% sortedMovies.forEach(movie => { %>
       <div id="imgcontain">
         <li  id="listimage" data-id="<%= sortedMovies.id %>">
+            <div id="star-rating">
+              <% for(let i=0; i < movie.stars; i++) { %>
+              <img id="star-image" src="../styles/images/star1.png">
+              <% }%>
+            </div>
         <img class="homemovies" src="<%= movie.image_url %>">
-        <h3 id="homemtitle"><%= movie.title %></h3>
         </li>
       </div>
     <% }) %>
   </ul>
 
-
-  <footer>
-    </footer>
+</main>
+<%- include('../../layout/footer') %>
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
     <script src="../../public/scripts/app.js"></script>
   </body>
