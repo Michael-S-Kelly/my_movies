@@ -40,6 +40,16 @@
           <p><%= movie.review %></p>
         </section>
     </section>
+
+    <form action = "<%= `/details/${movie.id}`%>"  method = "post">
+      <input type="hidden" name="_method" value="<%-'put' %>">
+      <label>Title: <input type="text" name="title" value="<%= movie.title %>" placeholder="<%= movie.title %>"/> </label>
+      <label>Overview: <input type="text" name="overview" value="<%= movie.overview %>" placeholder="<%= movie.overview %>"/> </label>
+      <label>Released On: <input type="text" name="Released On" value="<%= movie.released_on %>" placeholder="<%= movie.released_on %>"/> </label>
+      <label>Popularity: <input type="text" name="popularity"value="<%= movie.popularity %>" placeholder="<%= movie.popularity %>"/> </label>
+      <button type = submit>Update</button>
+    </form>
+
     <form action="<%- `/details/${movie.id}` %>" method="post">
       <lable><input type="text" name="username" placeholder="userName" value="userName"></lable>
       <input type="hidden" name="created_at" value=" <%= Date.now() %>"/>

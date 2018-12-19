@@ -58,6 +58,7 @@ app.post('/delete/:id', deleteMovie);
 app.get('/', getPopularMovies);
 app.post('/sort', getSortedMovies);
 app.get('/star_trek', getResultsTrek);
+app.put('/details/:id', updateMovie);
 
 function Movie(data) {
   this.title = data.title;
@@ -319,3 +320,13 @@ function getResultsTrek(request, response) {
     response.render('pages/searches/star_trek', { trekMovies: result });
   });
 }
+
+function updateMovie(request, response){
+  let {title, popularity, overview, released_on, image_url, created_at} = request.body;
+  let SQL =`UPDATE movies SET title = $1, popularity = $2, overview = $3, released_on = $4, image_url = $5, created_at = $6 WHERE id = $7;`;
+  let values = [title, popularity, overview, released_on, image_url, created_at];
+  client.query(SQL, values)
+    .then(response.redirect(`/details/:id`))
+    .catch(err => console.error(err));
+
+};
