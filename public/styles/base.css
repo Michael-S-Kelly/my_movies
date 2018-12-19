@@ -297,63 +297,6 @@ padding-left: 2vw;
   font-size: 3vw;
 }
 
-/* Details page view */
-.details-contain {
-  display: flex;
-  flex-direction: column;
-flex-wrap: wrap;
-  width: 100%;
-  padding-bottom: 5vw;
-}
-#detailsimage {
-margin-top:.5vw;
-height: 60vw;
-margin: 0 auto;
-border-radius: .3em;
-}
-.detailstitle{
-font-size: 4.5vw;
-font-weight: bold;
-height: 6vw;
-text-overflow: ellipsis;
-overflow: hidden;
-white-space: nowrap;
-width: 90%;
-padding-left: 2vw;
-}
-
-#popdetails {
-  font-size: 3vw;
-}
-
-#overviewdeets{
-  font-size: auto;
-  overflow-x: hidden;
-  margin-left: 1.75vw;
-  margin-top: 1vw;
-  margin-bottom: 2vw;
-  /* padding: 2vw; */
-  width: 90%;
-  height: 12vw;
-  color: #fff;
-  border-radius: .3em;
-  background-color: #000;
-}
-#releaseddeets {
-  font-size: 2.75vw;
-}
-.savedeets {
-  background-color: #fff;
-  color: #000;
-  border-radius: .5em;
-  width: 35%;
-  margin-top: 1vw;
-  margin-bottom: 1vw;
-  padding-top: 1.5vw;
-  padding-bottom: 1.5vw;
-  font-size: 3vw;
-}
-
 
 /* greater than mobile - desktop view */
 @media screen and (min-width: 960px) {
@@ -514,7 +457,10 @@ body {
   height: 2.2vw;
 }
 #glasses:hover {
-  height: 2.7vw;
+  animation: shake 1s cubic-bezier(.36,.07,.19,.97) infinite;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
  }
 #labelSearch {
   padding-left: 2vw;
@@ -556,7 +502,10 @@ body {
 
 /*=========Image Hover========*/
 .homemovies:hover {
-  height: 31vw;
+  animation: shake 1s cubic-bezier(.36,.07,.19,.97) infinite;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
 }
 /*============================*/
 
@@ -615,12 +564,6 @@ body {
     font-size: 1vw;
   }
 
-  /*=========Image Hover========*/
-  .savebut:hover {
-    height: 3vw;
-    margin-top: 1.5vw;
-  }
-  /*============================*/
 
   .results-form {
     /* padding-top: 2vw; */
@@ -689,16 +632,22 @@ body {
   font-size: 1vw;
 }
 
-/* Details page view */
+/* Details/Review page view */
+#sub-contain {
+  position: relative;
+  display: flex;
+  margin: 0 auto;
+  margin-top: 1vw;
+}
 .details-contain {
   display: flex;
-  flex-direction: row;
+  flex-direction:column;
   flex-wrap: wrap;
-  width: 100%;
+  width: 60vw;
   padding-bottom: 5vw;
 }
 #deet-image-contain {
-  width: 400px;
+  width: 500px;
 }
 #detailsimage {
 margin-top:.5vw;
@@ -718,24 +667,26 @@ padding-left: 2vw;
 }
 
 #popdetails {
-  font-size: 3vw;
+  font-size: 1.5vw;
+  margin-top: .5vw;
 }
 
 #overviewdeets{
   font-size: auto;
   overflow-x: hidden;
-  margin-left: 1.75vw;
+  margin-left: auto;
+  margin-right: auto;
   margin-top: 1vw;
-  margin-bottom: 2vw;
+  margin-bottom: .5vw;
   padding: 2vw;
-  width: 90%;
-  height: 12vw;
+  width: 60%;
+  height: 8vw;
   color: #fff;
   border-radius: .3em;
-  background-color: #000;
+  background-color: rgba(136, 136, 136, 0.514);
 }
 #releaseddeets {
-  font-size: 2.75vw;
+  font-size: 1.5vw;
 }
 .savedeets {
   background-color: #fff;
@@ -748,5 +699,75 @@ padding-left: 2vw;
   padding-bottom: 1.5vw;
   font-size: 3vw;
 }
+.delete {
+  position: absolute;
+  right: 0;
+  margin-top: 3.2vw;
+  margin-right: 4.1vw;
+  background-color: #fff;
+  color: #000;
+  border-radius: .5em;
+   padding-top: .5vw;
+  padding-bottom: .5vw;
+  font-size: 1vw;
+}
 
+#reviewer-contain {
+  background-color: rgba(136, 136, 136, 0.514);
+  color: #fff;
+  width: 30vw;
+}
+#overviewdeets2{
+  font-size: auto;
+  overflow-x: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1vw;
+  margin-bottom: .5vw;
+  padding: 2vw;
+  width: 60%;
+  height: auto;
+  color: #fff;
+  border-radius: .3em;
+  background-color: rgba(136, 136, 136, 0.514);
+}
+.update-movie {
+  margin-top: .5vw;
+  margin-right: 4.1vw;
+  background-color: #fff;
+  color: #000;
+  border-radius: .5em;
+   padding-top: .5vw;
+  padding-bottom: .5vw;
+  font-size: 1vw;
+}
+
+.create-review {
+  margin-top: .5vw;
+  margin-right: 4.1vw;
+  background-color: #fff;
+  color: #000;
+  border-radius: .5em;
+  padding-top: .5vw;
+  padding-bottom: .5vw;
+  font-size: 1vw;
+}
+}
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0);
+  }
+  
+  20%, 80% {
+    transform: translate3d(2px, 0, 0);
+  }
+
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0);
+  }
+
+  40%, 60% {
+    transform: translate3d(4px, 0, 0);
+  }
 }
