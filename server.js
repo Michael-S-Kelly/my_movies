@@ -323,11 +323,11 @@ function getResultsTrek(request, response) {
 }
 
 function updateMovie(request, response){
-  let {title, popularity, overview, released_on, image_url, created_at} = request.body;
-  let SQL =`UPDATE movies SET title = $1, popularity = $2, overview = $3, released_on = $4, image_url = $5, created_at = $6 WHERE id = $7;`;
-  let values = [title, popularity, overview, released_on, image_url, created_at];
+  let {title, popularity, overview, released_on, image_url, stars} = request.body;
+  let SQL =`UPDATE movies SET title=$1, popularity=$2, overview=$3, released_on=$4, image_url=$5, stars=$6 WHERE title=$1;`;
+  let values = [title, popularity, overview, released_on, image_url, stars];
   client.query(SQL, values)
-    .then(response.redirect(`/details/:id`))
+    .then(response.redirect('/mymovies'))
     .catch(err => console.error(err));
 
-};
+}
