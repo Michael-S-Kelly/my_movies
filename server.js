@@ -167,7 +167,7 @@ function saveResults(req, res) {
   client
     .query(SQL, values)
     .then(res.redirect(`/mymovies`))
-    .catch(err => errorHandler(err, res));
+    .catch(err => errorHandler(err, res))
 }
 
 //Get saved movies
@@ -202,11 +202,11 @@ function getDetails(request, response) {
 
   client.query(SQLrev, values).then(result => {
     if (result.rows.length > 0) {
-      response.render('../views/pages/movies/details', { movie: result.rows[0] });
+      response.render('../views/pages/movies/details', { movie: result.rows, howmany: 2});
     }
     else {
       client.query(SQL, values).then(result => {
-        response.render('../views/pages/movies/details', { movie: result.rows[0] });
+        response.render('../views/pages/movies/details', { movie: result.rows[0], howmany: 0 });
       });
     }
   });
