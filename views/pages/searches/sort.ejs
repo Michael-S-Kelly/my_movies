@@ -2,6 +2,7 @@
 <html>
   <%- include('../../layout/head') %>
 <body>
+
       <%- include('../../layout/header') %>
  <main id="homeContent">
     <%- include('../../layout/search') %>
@@ -9,21 +10,40 @@
       <%- include('../../layout/sort-component') %>
 <ul id="popularMovies">
     <% sortedMovies.forEach(movie => { %>
-      <div id="imgcontain">
-        <li  id="listimage" data-id="<%= sortedMovies.id %>">
-            <div id="star-rating">
-              <% for(let i=0; i < movie.stars; i++) { %>
-              <img id="star-image" src="../styles/images/star1.png">
-              <% }%>
-            </div>
-        <img class="homemovies" src="<%= movie.image_url %>">
-        </li>
-      </div>
-    <% }) %>
-  </ul>
+      <section id = "<%= movie.title %>"  class='details-container'>
+          <div id="imgcontain" class = "imgCon">
+            <li  id="listimage">
+              <div id="star-rating">
+                <% for(let i=0; i < movie.stars; i++) { %>
+                  <img id="star-image" src="../styles/images/star1.png">
+                  <% }%>
+                </div>
+                <img class="homemovies" src="<%= movie.image_url %>">
+        </div>
+      </li>
+        <section class="pop-details pop-hide">
+            <form class ="results-form" action="/mymovies" method = "post">
+              <input type="hidden" value="<%= movie.title %>" name="title">
+              <input type="hidden" value="<%= movie.popularity %>" name="popularity">
+              <input type="hidden" value="<%= movie.overview %>" name="overview">
+              <input type="hidden" value="<%= movie.released_on %>" name="released_on">
+              <input type="hidden" value="<%= movie.image_url%>" name="image_url">
+              <input type="hidden" value="<%= movie.stars %>" name="stars">
+              <button class="savebut" type="submit">Save Movie</button>
+            </form>
+          <h3><%= movie.title %> </h3>
+          <p>Popularity: <%= movie.popularity %> </p>
+          <p> Released On: <%= movie.released_on %></p>
+          <p> <%= movie.overview %></p>
+        </section>
+          </div>
+        </section>
+        <% }) %>
+    
+      </ul>
 </main>
 <%- include('../../layout/footer') %>
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <script src="../../public/scripts/app.js"></script>
+    <script src="/scripts/app.js"></script>
   </body>
   </html>

@@ -70,7 +70,3 @@ $('.pop-details.pop-hide').on('click', function(event) {
 
 })
 
-$('body').on('click', '.details-container', function(event) {
-  console.log('pop is running')
-  $('.pop-details').toggleClass('pop-hide')
-})
