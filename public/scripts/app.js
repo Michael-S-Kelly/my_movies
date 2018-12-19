@@ -70,7 +70,11 @@ $('.pop-details.pop-hide').on('click', function(event) {
 
 })
 
-$('body').on('click', '.details-container', function(event) {
-  console.log('pop is running')
-  $('.pop-details').toggleClass('pop-hide')
+$('.update-movie').on('click', function(event){
+  console.log('firing');
+  $('.updatemovies').toggleClass('pop-hide')
+})
+$('.create-review').on('click', function(event){
+  console.log('also firing');
+  $('.createreview').toggleClass('pop-hide')
 })

@@ -645,6 +645,7 @@ body {
   flex-wrap: wrap;
   width: 60vw;
   padding-bottom: 5vw;
+  margin-right: 5vw;
 }
 #deet-image-contain {
   width: 500px;
@@ -658,12 +659,13 @@ border-radius: .3em;
 .detailstitle{
 font-size: 4.5vw;
 font-weight: bold;
-height: 6vw;
+/* height: 6vw; */
 text-overflow: ellipsis;
 overflow: hidden;
 white-space: nowrap;
 width: 90%;
-padding-left: 2vw;
+/* padding-left: 2vw; */
+
 }
 
 #popdetails {
@@ -699,7 +701,33 @@ padding-left: 2vw;
   padding-bottom: 1.5vw;
   font-size: 3vw;
 }
-.delete {
+
+#delete-holder {
+  display: flex;
+  justify-content: space-between;  
+}
+
+.updatemovies form, .createreview form {
+  display: flex;
+  flex-flow: column;
+}
+
+ label {
+  margin: .5vw;
+}
+input {
+  width: 30vw;
+}
+
+.createreview input {
+  margin: .5vw;
+  width: 40vw;
+}
+
+.createreview button, .updatemovies button {
+  width: 40vw;
+}
+/* .delete {
   position: absolute;
   right: 0;
   margin-top: 3.2vw;
@@ -710,7 +738,7 @@ padding-left: 2vw;
    padding-top: .5vw;
   padding-bottom: .5vw;
   font-size: 1vw;
-}
+} */
 
 #reviewer-contain {
   background-color: rgba(136, 136, 136, 0.514);

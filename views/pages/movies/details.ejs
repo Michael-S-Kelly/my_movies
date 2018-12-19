@@ -1,73 +1,97 @@
 <!DOCTYPE html>
 <html>
-  <%- include('../../layout/head') %>
+<%- include('../../layout/head') %>
+
 <body id="bodyStuff">
-    <%- include('../../layout/header') %>
+  <%- include('../../layout/header') %>
   <main id="homeContent">
-      <%- include('../../layout/search') %>
+    <%- include('../../layout/search') %>
     <div id="sub-contain">
       <div id="deet-image-contain">
-    <img id="detailsimage" src="<%= movie.image_url %>">
-    </div>
-    
-    <div class="details-contain">
-    <div class="star-rating-results">
-      <% for(let i=0; i < movie.stars; i++) { %>
-      <img class="star-image-results" src="../styles/images/star1.png">
-      <% }%>
-    </div>
-        <form action="/delete/<%= movie.id %>" method="post">
-      <button class="delete" type="submit">Delete Movie</button>
-    </form>
-    <h3 class="detailstitle"> <%= movie.title %> </h3>
-    <p id="overviewdeets"><%= movie.overview %> </p>
-    <p id="releaseddeets"> Released On:<%= movie.released_on %> </p>
-    <p id="popdetails"> Popularity: <%= movie.popularity %> </p>
+        <img id="detailsimage" src="<%= movie.image_url %>">
+      </div>
 
-
-
-    <section class="reviews">
-      <h3 id="releaseddeets">User Reviews</h3>
-        <div id="overviewdeets2">
-          <p><%= movie.username %> : </p>
-          <p><%= movie.review %></p>
-          <p><%= new Date(movie.created_at * 1000).toDateString() %></p>
+      <div class="details-contain">
+        <div class="star-rating-results">
+          <% for(let i=0; i < movie.stars; i++) { %>
+          <img class="star-image-results" src="../styles/images/star1.png">
+          <% }%>
         </div>
-    </section>
-    <button class="update-movie" type=submit>Update Movie</button>
-    <button class="create-review" type=submit>Create Review</button>
-    <form action = "<%= `/details/${movie.id}` %>"  method = "post">
+        <section id="delete-holder">
+          <h3 class="detailstitle">
+            <%= movie.title %>
+          </h3>
+          <form action="/delete/<%= movie.id %>" method="post">
+            <button class="delete" type="submit">Delete Movie</button>
+          </form>
+        </section>
+        <p id="overviewdeets">
+          <%= movie.overview %>
+        </p>
+        <p id="releaseddeets"> Released On:
+          <%= movie.released_on %>
+        </p>
+        <p id="popdetails"> Popularity:
+          <%= movie.popularity %>
+        </p>
 
-      <input type="hidden" name="_method" value="<%-'put' %>">
-      <label><input type="hidden" name="title" value="<%= movie.title %>" placeholder="<%= movie.title %>"/> </label>
-      <label>Overview: <input type="text" name="overview" value="<%= movie.overview %>" placeholder="<%= movie.overview %>"/> </label>
-      <label> <input type="hidden" name="Released On" value="<%= movie.released_on %>" placeholder="<%= movie.released_on %>"/> </label>
-      <label>Popularity: <input type="text" name="popularity"value="<%= movie.popularity %>" placeholder="<%= movie.popularity %>"/> </label>
-      <label> <input type="hidden" name="image_url"value="<%= movie.image_url %>" placeholder="<%= movie.image_url %>"/> </label>
-      <label>stars: <input type="text" name="stars"value="<%= movie.stars %>" placeholder="<%= movie.stars %>"/> </label>
-      <button type = submit>Save Update</button>
-    </form>
 
-    <form action="<%- `/details/${movie.id}` %>" method="post">
-      <lable><input type="text" name="username" placeholder="userName" value="userName"></lable>
-      <input type="hidden" name="created_at" value=" <%= Date.now() %>"/>
-      <lable><input type="text" name="review" placeholder="Your Review Here" value="review" /></lable>
-      <input type="hidden" name="movie_id" value="<%- movie.id %>"/>
-      <button type=submit>Save Review</button>
+
+        <section class="reviews">
+          <h3 id="releaseddeets">User Reviews</h3>
+          <div id="overviewdeets2">
+            <p>
+              <%= movie.username %> : </p>
+            <p>
+              <%= movie.review %>
+            </p>
+            <p>
+              <%= new Date(movie.created_at * 1000).toDateString() %>
+            </p>
+          </div>
+        </section>
+        <button class="update-movie" type=submit>Update Movie</button>
+        <section class="updatemovies pop-hide">
+          <form action="<%= `/details/${movie.id}` %>" method="post">
+            <input type="hidden" name="_method" value="<%-'put' %>">
+            <label><input type="hidden" name="title" value="<%= movie.title %>" placeholder="<%= movie.title %>" />
+            </label>
+            <label>Overview: <input type="text" name="overview" value="<%= movie.overview %>" placeholder="<%= movie.overview %>" />
+            </label>
+            <label> <input type="hidden" name="Released On" value="<%= movie.released_on %>" placeholder="<%= movie.released_on %>" />
+            </label>
+            <label>Popularity: <input type="text" name="popularity" value="<%= movie.popularity %>" placeholder="<%= movie.popularity %>" />
+            </label>
+            <label> <input type="hidden" name="image_url" value="<%= movie.image_url %>" placeholder="<%= movie.image_url %>" />
+            </label>
+            <label>stars: <input type="text" name="stars" value="<%= movie.stars %>" placeholder="<%= movie.stars %>" />
+            </label>
+            <button type=submit>Save Update</button>
+          </form>
+        </section>
+        <button class="create-review" type=submit>Create Review</button>
+        <section class="createreview pop-hide">
+        <form action="<%- `/details/${movie.id}` %>" method="post">
+          <lable><input type="text" name="username" placeholder="userName" value="userName"></lable>
+          <input type="hidden" name="created_at" value=" <%= Date.now() %>" />
+          <lable><input type="text" name="review" placeholder="Your Review Here" value="review" /></lable>
+          <input type="hidden" name="movie_id" value="<%- movie.id %>" />
+          <button type=submit>Save Review</button>
+        </form>
+        </section>
+      </div>
+    </div>
+    <form target="_blank" action="http://www.amazon.com/exec/obidos/external-search" [RETURN] method="get">
+      <input type="hidden" name="mode" value="blended" />
+      <input type="hidden" name="tag" value="insert associate tag" /> Search
+      Amazon:<br />
+      <input type="text" name="keyword" size="10" value="<%= movie.title %>" />
+      <input type="submit" value="Go" />
     </form>
-  </div>
-</div>
-  <form target="_blank" action="http://www.amazon.com/exec/obidos/external-search" [RETURN] method="get">
-    <input type="hidden" name="mode" value="blended" />
-    <input type="hidden" name="tag" value="insert associate tag" /> Search
-    Amazon:<br />
-    <input type="text" name="keyword" size="10" value="<%= movie.title %>" />
-    <input type="submit" value="Go" />
-  </form>
   </main>
   <%- include('../../layout/footer') %>
   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-  <script src="../../public/scripts/app.js"></script>
+  <script src="/scripts/app.js"></script>
 </body>
 
 </html>
