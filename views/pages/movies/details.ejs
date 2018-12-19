@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <%- include('../../layout/head') %>
-<body>
+<body id="bodyStuff">
     <%- include('../../layout/header') %>
   <main id="homeContent">
       <%- include('../../layout/search') %>
@@ -18,6 +18,7 @@
     <p id="overviewdeets">Overview: <%= movie.overview %> </p>
     <p id="releaseddeets"> Released On:<%= movie.released_on %> </p>
     <p id="popdetails"> Popularity: <%= movie.popularity %> </p>
+
     <form target="_blank" action="http://www.amazon.com/exec/obidos/external-search" [RETURN] method="get">
       <input type="hidden" name="mode" value="blended" />
       <input type="hidden" name="tag" value="insert associate tag" /> Search
@@ -34,12 +35,16 @@
           <p><%= movie.review %></p>
         </section>
     </section>
-    <form action = "<%= `/details/${movie.id}`%>"  method = "post">
+
+    <form action = "<%= `/details/${movie.id}` %>"  method = "post">
+
       <input type="hidden" name="_method" value="<%-'put' %>">
-      <label>Title: <input type="text" name="title" value="<%= movie.title %>" placeholder="<%= movie.title %>"/> </label>
+      <label><input type="hidden" name="title" value="<%= movie.title %>" placeholder="<%= movie.title %>"/> </label>
       <label>Overview: <input type="text" name="overview" value="<%= movie.overview %>" placeholder="<%= movie.overview %>"/> </label>
-      <label>Released On: <input type="text" name="Released On" value="<%= movie.released_on %>" placeholder="<%= movie.released_on %>"/> </label>
+      <label> <input type="hidden" name="Released On" value="<%= movie.released_on %>" placeholder="<%= movie.released_on %>"/> </label>
       <label>Popularity: <input type="text" name="popularity"value="<%= movie.popularity %>" placeholder="<%= movie.popularity %>"/> </label>
+      <label> <input type="hidden" name="image_url"value="<%= movie.image_url %>" placeholder="<%= movie.image_url %>"/> </label>
+      <label>stars: <input type="text" name="stars"value="<%= movie.stars %>" placeholder="<%= movie.stars %>"/> </label>
       <button type = submit>Update</button>
     </form>
 
@@ -50,9 +55,10 @@
       <input type="hidden" name="movie_id" value="<%- movie.id %>"/>
       <button type=submit>Add Review</button>
     </form>
-  </div>
   </main>
-  <%- include('../../layout/footer') %>
+  <footer>
+
+  </footer>
   <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
   <script src="../../public/scripts/app.js"></script>
 </body>
