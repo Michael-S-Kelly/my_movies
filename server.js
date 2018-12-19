@@ -70,7 +70,6 @@ function Movie(data) {
   }
   this.image_url =
     'https://image.tmdb.org/t/p/w370_and_h556_bestv2/' + data.poster_path;
-  this.created_at = Date.now();
   this.stars = Math.round(data.vote_average / 2);
 }
 
@@ -153,16 +152,16 @@ function saveResults(req, res) {
     overview,
     released_on,
     image_url,
-    created_at
+    stars
   } = req.body;
-  let SQL = `INSERT INTO movies(title, popularity, overview, released_on, image_url, created_at) VALUES($1,$2,$3,$4,$5,$6) RETURNING id;`;
+  let SQL = `INSERT INTO movies(title, popularity, overview, released_on, image_url, stars) VALUES($1,$2,$3,$4,$5,$6) RETURNING id;`;
   let values = [
     title,
     popularity,
     overview,
     released_on,
     image_url,
-    created_at
+    stars
   ];
   client
     .query(SQL, values)
@@ -184,9 +183,9 @@ function getSavedMovies(req, res){
 function saveReviews(req, res) {
   console.log('save reviews is firing');
 
-  let { username, review, created_at, movie_id } = request.body;
-  let SQL = `INSERT INTO reviews (username, review, created_at, movie_id) VALUES($1,$2,$3,$4) RETURNING id;`;
-  let values = [username, review, created_at, movie_id];
+  let { username, review, stars, movie_id } = request.body;
+  let SQL = `INSERT INTO reviews (username, review, stars, movie_id) VALUES($1,$2,$3,$4) RETURNING id;`;
+  let values = [username, review, stars, movie_id];
   client
     .query(SQL, values)
     .then(response.redirect('/mymovies'))
@@ -288,7 +287,7 @@ function StarTrek(data) {
   }
   this.image_url =
     'https://image.tmdb.org/t/p/w370_and_h556_bestv2/' + data.poster_path;
-  this.created_at = Date.now();
+  this.stars = Date.now();
 }
 
 function fetchTrek() {

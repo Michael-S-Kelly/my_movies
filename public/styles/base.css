@@ -226,6 +226,19 @@ padding-left: 2vw;
   /* padding-top: 2vw; */
 }
 
+.star-image-results{
+  height: 7vw;
+  padding-top: 1vw;
+  z-index: 1;
+}
+
+.star-rating-results {
+  position: absolute;
+  padding-top: 5vw;
+  padding-left: 2vw;
+  height: 10vw;
+  width: 3vw;
+}
   /* My Movies Page */
 
   #savedMovies{
@@ -235,6 +248,7 @@ padding-left: 2vw;
     flex-wrap: wrap;
     padding-left:2vw;
     margin-top: 2vw;
+    margin-bottom: 12vw;
   }
 
   #savedcontain {
@@ -277,6 +291,65 @@ padding-left: 2vw;
   padding-bottom: 1.5vw;
   font-size: 3vw;
 }
+
+/* Details page view */
+.details-contain {
+  display: flex;
+  flex-direction: column;
+flex-wrap: wrap;
+  width: 100%;
+  padding-bottom: 5vw;
+}
+#detailsimage {
+margin-top:.5vw;
+height: 60vw;
+margin: 0 auto;
+border-radius: .3em;
+}
+.detailstitle{
+font-size: 4.5vw;
+font-weight: bold;
+height: 6vw;
+text-overflow: ellipsis;
+overflow: hidden;
+white-space: nowrap;
+width: 90%;
+padding-left: 2vw;
+}
+
+#popdetails {
+  font-size: 3vw;
+}
+
+#overviewdeets{
+  font-size: auto;
+  overflow-x: hidden;
+  margin-left: 1.75vw;
+  margin-top: 1vw;
+  margin-bottom: 2vw;
+  /* padding: 2vw; */
+  width: 90%;
+  height: 12vw;
+  color: #fff;
+  border-radius: .3em;
+  background-color: #000;
+}
+#releaseddeets {
+  font-size: 2.75vw;
+}
+.savedeets {
+  background-color: #fff;
+  color: #000;
+  border-radius: .5em;
+  width: 35%;
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+  padding-top: 1.5vw;
+  padding-bottom: 1.5vw;
+  font-size: 3vw;
+}
+
+
 /* greater than mobile - desktop view */
 @media screen and (min-width: 960px) {
 body {
@@ -351,6 +424,17 @@ body {
     border-radius: .3em;
     margin-left: 3vw;
     float: left;
+  }
+  #sortbut {
+    background-color: #fff;
+    color: #000;
+    border-radius: .5em;
+    width: 8%;
+    margin-right: 1vw;
+    margin-left: 1vw;
+    padding-top: .2vw;
+    padding-bottom: .2vw;
+    font-size: 1vw;
   }
 
   /* star rating */
@@ -501,7 +585,17 @@ body {
   .results-form {
     /* padding-top: 2vw; */
   }
+  .star-image-results{
+    height: 4vw;
+    padding-top: 1vw;
+    z-index: 1;
+  }
 
+  .star-rating-results {
+    position: absolute;
+    padding-top: 2vw;
+    padding-left: 0;
+  }
   /* My Movies Page */
 
   #savedMovies{
@@ -511,6 +605,7 @@ body {
     flex-wrap: wrap;
     padding-left:2vw;
     margin-top: 2vw;
+    margin-bottom: 0;
   }
 
   #savedcontain {
@@ -552,6 +647,66 @@ body {
   padding-top: .5vw;
   padding-bottom: .5vw;
   font-size: 1vw;
+}
+
+/* Details page view */
+.details-contain {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
+  padding-bottom: 5vw;
+}
+#deet-image-contain {
+  width: 400px;
+}
+#detailsimage {
+margin-top:.5vw;
+height: 40vw;
+margin-left: 1vw;
+border-radius: .3em;
+}
+.detailstitle{
+font-size: 4.5vw;
+font-weight: bold;
+height: 6vw;
+text-overflow: ellipsis;
+overflow: hidden;
+white-space: nowrap;
+width: 90%;
+padding-left: 2vw;
+}
+
+#popdetails {
+  font-size: 3vw;
+}
+
+#overviewdeets{
+  font-size: auto;
+  overflow-x: hidden;
+  margin-left: 1.75vw;
+  margin-top: 1vw;
+  margin-bottom: 2vw;
+  padding: 2vw;
+  width: 90%;
+  height: 12vw;
+  color: #fff;
+  border-radius: .3em;
+  background-color: #000;
+}
+#releaseddeets {
+  font-size: 2.75vw;
+}
+.savedeets {
+  background-color: #fff;
+  color: #000;
+  border-radius: .5em;
+  width: 35%;
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+  padding-top: 1.5vw;
+  padding-bottom: 1.5vw;
+  font-size: 3vw;
 }
 
 }

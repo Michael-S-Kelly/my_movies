@@ -4,8 +4,6 @@
 <body>
   <%- include('../../layout/header') %>
 <main id="homeContent">
-
-    <!-- <h2 id="poptitle">New Search</h2> -->
     <div id="searchcontain">
     <img class="projector" src="../../styles/images/projector.jpg">
     <form class="search-form" action="/show" method="post">
@@ -21,6 +19,11 @@
       <div id="resultscontain">
         <form class ="results-form" action="/mymovies" method = "post">
         <section class ="api-movies">
+            <div class="star-rating-results">
+                <% for(let i=0; i < data.stars; i++) { %>
+                <img class="star-image-results" src="../styles/images/star1.png">
+                <% }%>
+                </div>
           <input type="hidden" name="image_url" value="<%- data.image_url %>">
           <img id="resultsimage"src=<%= data.image_url %> value="<%-data.image_url %>">
           <input type="hidden" name="title" value="<%- data.title %>">

@@ -18,12 +18,17 @@
             <button id="searchbut">Submit</button>
           </form>
         </div>
-        <h2 id="poptitle">My Saved Movies</h2>
+        <h2 id="resultstitle">My Saved Movies</h2>
     <section>
       <ul id="savedMovies">
           <% savedMovies.forEach(movie => { %>
             <div id="savedcontain">
             <li id="savedlist" class="movies" data-id="<%= movie.id %>">
+                <div id="star-rating">
+                  <% for(let i=0; i < movie.stars; i++) { %>
+                  <img id="star-image" src="../styles/images/star1.png">
+                  <% }%>
+                </div>
               <img id="savedimage" src="<%= movie.image_url %>">
               <h3 id="savedmtitle"><%= movie.title %></h3>
               <form action="<%= `/details/${movie.id}` %>" method="get">
