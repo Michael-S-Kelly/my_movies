@@ -45,18 +45,23 @@ console.log('app.js is running');
 
 // trigger ///
 
-// let konamikeys =[];
-// let konami = "38,38,40,40,37,39,37,39,66,65";
+let contrakeys =[];
+let contra = "ArrowUp,ArrowUp,ArrowDown,ArrowDown,ArrowLeft,ArrowRight,ArrowLeft,ArrowRight,b,a";
 
-// $(document).keydown(function(event) {
-//   konamikeys.push(event.keycode);
-//   if(konamikeys.toString().indexOf(konami) => 0) {
-//     $(document).unbind('keydown', arguments.callee);
-
-//     $("body").addClass("konami");
-
-//   }
-// })
+$(document).keydown(function(element) {
+  contrakeys.push(element.originalEvent.key);
+  console.log(element.keycode);
+  if(contrakeys.toString().indexOf(contra) >= 0) {
+    $('.goku-stars').addClass('contra-stars')
+    $('.open-sesame').addClass('contra-start')
+    $('.goku1').addClass('contra1');
+    console.log('contra running');
+    $('.goku2').addClass('contra2');
+    console.log('contra running');
+    $('.goku3').addClass('contra3');
+    console.log('contra running');
+  }
+})
 
 //toggle details
 $('.imgCon').on('click', function(event) {
