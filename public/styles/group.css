@@ -10,6 +10,22 @@
   font-family: halo;
   src: url(/styles/fonts/halo3/Halo3.ttf)
 }
+@font-face {
+  font-family: dumble3;
+  src: url(/styles/fonts/dumbledor/dum3/dum3out.ttf)
+}
+@font-face {
+  font-family: undev;
+  src: url(../styles/fonts/undeveloped/Undeveloped.ttf)
+}
+@font-face {
+  font-family: bedebo;
+  src: url(../styles/fonts/b-de-bonita/b-de-bonita-shadow.ttf)
+}
+@font-face {
+  font-family: bullpen;
+  src: url(../styles/fonts/bullpen/bullpen\ 3d.ttf)
+}
 body {
   height: 265vw;
 }
@@ -298,8 +314,8 @@ a:hover {
 #group>img {
   position: relative;
   top: 0vw;
-  left: 0vw;
-  width: 75vw;
+  left: 4vw;
+  width: 60vw;
 }
 
 .individual {
@@ -378,6 +394,7 @@ h3 {
   color: white;
   font-size: 3vw;
   text-align: center;
+  font-family: bedebo;
 }
 
 .inDet {
@@ -385,7 +402,7 @@ h3 {
   top: -23vw;
   left: 0vw;
   height: 34vw;
-  color: white;
+  color: yellow;
 }
 
 .inDet>ul {
@@ -402,6 +419,7 @@ h3 {
   width: 40vw;
   font-size: 3vw;
   margin-bottom: 3vw;
+  /* font-family: bullpen; */
 }
 
 .inDet>p{
@@ -409,6 +427,7 @@ h3 {
   top: 4vw;
   left: 0vw;
   font-size: 2vw;
+  /* font-family: bullpen; */
 }
 
 #bottomImg {
