@@ -59,7 +59,22 @@ console.log('app.js is running');
 // })
 
 //toggle details
-$('body').on('click', '.details-container', function(event) {
+$('.imgCon').on('click', function(event) {
   console.log('pop is running')
-  $('.pop-details').toggleClass('pop-hide')
+  $(this).next().show()
+
+})
+$('.pop-details.pop-hide').on('click', function(event) {
+  console.log('pop is running')
+  $(this).hide()
+
+})
+
+$('.update-movie').on('click', function(event){
+  console.log('firing');
+  $('.updatemovies').toggleClass('pop-hide')
+})
+$('.create-review').on('click', function(event){
+  console.log('also firing');
+  $('.createreview').toggleClass('pop-hide')
 })

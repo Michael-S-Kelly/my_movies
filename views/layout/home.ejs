@@ -1,7 +1,7 @@
 <ul id="popularMovies">
     <% popularMovies.forEach(movie => { %>
-      <section class='details-container'>
-      <div id="imgcontain">
+      <section id = "<%= movie.title %>"  class='details-container'>
+      <div id="imgcontain" class = "imgCon">
         <li  id="listimage" data-id="<%= popularMovies.id %>">
           <div id="star-rating">
             <% for(let i=0; i < movie.stars; i++) { %>

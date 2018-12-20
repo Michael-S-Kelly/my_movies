@@ -167,7 +167,7 @@ function saveResults(req, res) {
   client
     .query(SQL, values)
     .then(res.redirect(`/mymovies`))
-    .catch(err => errorHandler(err, res));
+    .catch(err => errorHandler(err, res))
 }
 
 //Get saved movies
@@ -184,9 +184,9 @@ function getSavedMovies(req, res){
 function saveReviews(request, response) {
   console.log('save reviews is firing');
 
-  let { username, review, stars, movie_id } = request.body;
-  let SQL = `INSERT INTO reviews (username, review, stars, movie_id) VALUES($1,$2,$3,$4) RETURNING id;`;
-  let values = [username, review, stars, movie_id];
+  let { username, review, created_at, movie_id } = request.body;
+  let SQL = `INSERT INTO reviews (username, review, created_at, movie_id) VALUES($1,$2,$3,$4) RETURNING id;`;
+  let values = [username, review, created_at, movie_id];
   client
     .query(SQL, values)
     .then(response.redirect('/mymovies'))
@@ -202,11 +202,11 @@ function getDetails(request, response) {
 
   client.query(SQLrev, values).then(result => {
     if (result.rows.length > 0) {
-      response.render('../views/pages/movies/details', { movie: result.rows[0] });
+      response.render('../views/pages/movies/details', { movie: result.rows, howmany: 2});
     }
     else {
       client.query(SQL, values).then(result => {
-        response.render('../views/pages/movies/details', { movie: result.rows[0] });
+        response.render('../views/pages/movies/details', { movie: result.rows[0], howmany: 0 });
       });
     }
   });

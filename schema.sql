@@ -20,7 +20,7 @@ CREATE TABLE reviews (
   id SERIAL PRIMARY KEY,
   username VARCHAR(255),
   review TEXT,
-  stars BIGINT,
+  created_at BIGINT,
   movie_id INTEGER NOT NULL,
   FOREIGN KEY (movie_id) REFERENCES movies (id)
 );
