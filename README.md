@@ -58,9 +58,9 @@ Note: If you are using windows, you must run the command ```pgstart``` before cr
 ``` touch schema.sql ```
 - Insert the following code into your schema file
 ```SQL
-DROP DATABASE my_database;
-CREATE DATABASE my_database;
-\c my_database;
+DROP DATABASE <my_database_name>;
+CREATE DATABASE <my_database_name>;
+\c <my_database_name>;
 
 DROP TABLE IF EXISTS reviews;
 DROP TABLE IF EXISTS movies;
@@ -88,22 +88,100 @@ CREATE TABLE reviews (
 ### Get your API Key
 This app uses the TMDB API. To get your API key, make an account in TMDB, got to settings, and get your API key. You will need it later.
 
-###Configure your .env
+### Configure your .env
 - Set your DATABASE_URL
-  - For Mac : ```DATABASE_URL=postgres://localhost:5432/my_movies```
-  - For Windows: ```DATABASE_URL=postgres://<username>:<password>@localhost:5432/my_movies```
+  - For Mac : ```DATABASE_URL=postgres://localhost:5432/my_database_name>```
+  - For Windows: ```DATABASE_URL=postgres://<username>:<password>@localhost:5432/<my_database_name>```
 - Set your API KEY
   - ```MOVIE_API_KEY=<your-apikey-here>```
 
+### Get Started Coding!
+
 ## Architecture
 <!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
+### Languages
+- JavaScript
+- HTML
+- CSS
+- SQL
 
+### Libraries
+- JQuery
+- EJS
+
+
+### API
+- theMovieDB https://www.themoviedb.org/documentation/api
+
+
+### Scaffold
+```sh
+star_flix (repository)
+├──public
+│  ├── scripts
+│  │   ├── app.js
+│  │   └── group.js
+│  └── styles
+│      ├── fonts
+│      ├── images
+│      ├── layout
+│      │   ├──footer.css
+│      │   └──header.css
+│      ├── modules
+│      │   ├──animation.css
+│      │   ├──home-content.css
+│      │   ├──results-pages.css
+│      │   ├──review-page.css
+│      │   ├──saved-movies.css
+│      │   ├──search.css
+│      │   └──sort-page.css
+│      ├── base.css
+│      ├── group.css
+│      └── reset.css
+├──views
+│  ├── layout
+│  │   ├── group.ejs
+│  │   ├── home.ejs
+│  │   ├── search.ejs
+│  │   ├── sort-components.ejs
+│  │   ├── footer.ejs
+│  │   ├── head.ejs
+│  │   └── header.ejs
+│  └── pages
+│      ├── movies
+│      │   ├── detail.ejs
+│      │   └── saved_movies.ejs
+│      ├── searches
+│      │   ├── new.ejs
+│      │   ├── sort.ejs
+│      │   └── update.ejs
+│      ├── error.ejs
+│      └── index.ejs
+├── .env
+├── .eslintrc.json
+├── .gitignore
+├── package-lock.json
+├── package.json
+├── README.md
+├── schema.sql
+└── server.js
+```
 
 ## Change Log
-<!-- Use this area to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an examples:
+12-14-2018 - Basic Scaffold and Database has been set up
+12-17-2018 10:00am - Application now has a fully functional express server, linked to the tmdb API.
+12-17-2018 2:00pm - Application can now save movies from the API to the database, and render the saved movies. Popular Movies now appear on index.ejs
+12-17-2018 5:00pm - Basic CSS is in place. 
+12-18-2018 10:00am - Application now has a view details page that takes details from database and renders them on page. The ability to add a review has been added. 
+12-18-2018 2:00am - Application will now sort popular movies based on user selections.
+12-19-2018 3:00pm - Application now has ability to take in multiple reviews for each movie. 
+12-20-2018 11:00am - Application now has the ability to delete movies and all associated reviews. 
 
-01-01-2001 4:59pm - Application now has a fully-functional express server, with a GET route for the location resource. -->
 
 
 ## Credits and Collaborations
-<!-- Give credit (and a link) to other people or resources that helped you build this application. -->
+#### Help From: 
+- James Salamonsen 
+- Madeline Peters
+
+
