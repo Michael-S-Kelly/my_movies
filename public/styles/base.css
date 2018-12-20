@@ -39,11 +39,11 @@ body {
   transform: rotate(90deg) translate(-2px, -1px);
   background-position: -13% 30px;
   background-repeat: no-repeat, repeat, repeat;
-  animation: shake 1s cubic-bezier(.95,.95,.95,.95) infinite;
+  animation: shake .59s cubic-bezier(.95,.95,.95,.95) infinite;
 }
 .contra2 {
   background-image: url("images/lightsaber.png");
-  transform: rotate(-50deg) translate(-2px, -1px);
+  transform: rotate(45deg) translate(-2px, -1px);
   background-position: 60% 70px;
   background-repeat: no-repeat, repeat, repeat;
   animation:  cubic-bezier(.36,.07,.19,.97) infinite;
