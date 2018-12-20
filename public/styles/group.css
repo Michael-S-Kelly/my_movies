@@ -10,6 +10,22 @@
   font-family: halo;
   src: url(/styles/fonts/halo3/Halo3.ttf)
 }
+@font-face {
+  font-family: dumble3;
+  src: url(/styles/fonts/dumbledor/dum3/dum3out.ttf)
+}
+@font-face {
+  font-family: undev;
+  src: url(../styles/fonts/undeveloped/Undeveloped.ttf)
+}
+@font-face {
+  font-family: bedebo;
+  src: url(../styles/fonts/b-de-bonita/b-de-bonita-shadow.ttf)
+}
+@font-face {
+  font-family: bullpen;
+  src: url(../styles/fonts/bullpen/bullpen\ 3d.ttf)
+}
 body {
   height: 265vw;
 }
@@ -102,6 +118,35 @@ a:hover {
   border-radius: 3px;
   z-index: 1;
   transform-origin: 4px 0px;
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  background: 0.5s cubic-bezier(0.77, 0.2,0.05,1.0); 
+  opacity: 0.55s ease;
+}
+#headstar {
+  float: left;
+  height: 3vw;
+}
+
+#navToggle span:first-child {
+  transform-origin: 0% 0%;
+}
+
+#navToggle span:nth-last-child(2) {
+  transform-origin: 0% 100%;
+}
+
+#navToggle input:checked ~ span {
+/* opacity: 1; */
+transform: rotate(45deg) translate(-2px, -1px);
+}
+
+#navToggle input:checked ~ span:nth-last-child(3) {
+opacity: 0;
+transform: rotate(0deg) scale(0.2, 0.2);
+} 
+
+#navToggle input:checked ~ span:nth-last-child(2) {
+transform: rotate(-45deg) translate(0, -1px);
 }
 #headstar {
   float: left;
@@ -298,8 +343,8 @@ a:hover {
 #group>img {
   position: relative;
   top: 0vw;
-  left: 0vw;
-  width: 75vw;
+  left: 4vw;
+  width: 60vw;
 }
 
 .individual {
@@ -378,6 +423,7 @@ h3 {
   color: white;
   font-size: 3vw;
   text-align: center;
+  font-family: bedebo;
 }
 
 .inDet {
@@ -385,7 +431,7 @@ h3 {
   top: -23vw;
   left: 0vw;
   height: 34vw;
-  color: white;
+  color: yellow;
 }
 
 .inDet>ul {
@@ -402,6 +448,7 @@ h3 {
   width: 40vw;
   font-size: 3vw;
   margin-bottom: 3vw;
+  /* font-family: bullpen; */
 }
 
 .inDet>p{
@@ -409,6 +456,7 @@ h3 {
   top: 4vw;
   left: 0vw;
   font-size: 2vw;
+  /* font-family: bullpen; */
 }
 
 #bottomImg {
