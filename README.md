@@ -90,8 +90,8 @@ This app uses the TMDB API. To get your API key, make an account in TMDB, got to
 
 ###Configure your .env
 - Set your DATABASE_URL
-  - For Mac : ```DATABASE_URL=postgres://localhost:5432/movies_db```
-  - For Windows: ```DATABASE_URL=postgres://<username>:<password>@localhost:5432/movies_db```
+  - For Mac : ```DATABASE_URL=postgres://localhost:5432/my_movies```
+  - For Windows: ```DATABASE_URL=postgres://<username>:<password>@localhost:5432/my_movies```
 - Set your API KEY
   - ```MOVIE_API_KEY=<your-apikey-here>```
 
