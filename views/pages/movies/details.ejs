@@ -132,7 +132,7 @@
                 </label>
                 <label> <input type="hidden" name="image_url" value="<%= movie[0].image_url %>" placeholder="<%= movie[0].image_url %>" />
                 </label>
-                <label>stars: <input type="text" name="stars" value="<%= movie[0].stars %>" placeholder="<%= movie[0].stars %>" />
+                <label>stars: (1-5) <input type="number" min="0" max="6" name="stars" value="<%= movie[0].stars %>" placeholder="<%= movie[0].stars %>" />
                 </label>
                 <button type=submit>Save Update</button>
               </form>
