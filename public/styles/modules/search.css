@@ -82,6 +82,7 @@
 #main-search-contain {
   background-color: rgba(136, 136, 136, 0.514);
   width: 100%;
+  padding-left: 2vw;
 }
 #searchcontain {
   display: flex;
