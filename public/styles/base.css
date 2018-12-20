@@ -11,6 +11,10 @@ body {
 
 }
 
+.konami {
+  display: none;
+}
+
 
 /* home image container */
 #homeContent {
