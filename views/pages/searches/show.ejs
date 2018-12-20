@@ -29,6 +29,7 @@
             <p id="popresults">Popularity: <%= data.popularity %></p>
             <input type="hidden" name="overview" value="<%- data.overview %>">
             <p id="overviewresults"><%= data.overview %></p>
+            <input type="hidden" value="<%= data.stars %>" name="stars">
             <input type="hidden" name="released_on" value="<%- data.released_on %>">
             <p id="releasedresult">Released On: <%= data.released_on %></p>
             <input type="hidden" name="created_at" value="<%- data.created_at %>">
