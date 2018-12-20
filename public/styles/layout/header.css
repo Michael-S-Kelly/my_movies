@@ -8,6 +8,8 @@ header {
   width: 100%;
   /* height: auto !important; */
   height: 9.6vw;
+  background: url(../images/kernel.png);
+  animation: animate-corn linear 7s infinite;
   background-color: #222;
   font-size: 6vw;
   padding-top: 1vw;
@@ -16,10 +18,16 @@ header {
   text-align: left;
   padding: 2vw;
 }
+
+@keyframes animate-corn{
+  from{ background-position:  0}
+  to {background-position:  0 -100%}
+}
+
 #headcontain {
    text-align: left;
   width: 100%;
-}
+
 /* #header {
   text-align: left;
   padding: 2vw;
@@ -134,17 +142,21 @@ transform: rotate(-45deg) translate(0, -1px);
     width: 100%;
     /* height: auto !important; */
     height: 4.4vw;
+
+    background: url(../images/kernel.png);
+    animation: animate-corn linear 7s infinite;
     background-color: #222;
-    /* background: url(../images/corn1.jpg);
-    animation: animate-corn linear 1s infinite; */
+
     font-size: 6vw;
     padding-top: .5vw;
     z-index: 2;
   }
-  /* @keyframes animate-corn{
+
+  @keyframes animate-corn{
     from{ background-position:  0}
-    to {background-position: 100% 0}
-  } */
+    to {background-position:  0 -100%}
+  }
+
   #headcontain {
     text-align: right;
     width: 100%;
