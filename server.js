@@ -64,8 +64,8 @@ function Movie(data) {
   this.title = data.title;
   this.popularity = data.popularity;
   this.overview = data.overview;
-  if (data.released_on) {
-    this.released_on = data.released_on;
+  if (data.release_date) {
+    this.released_on = data.release_date;
   } else {
     this.released_on = 'N/A';
   }

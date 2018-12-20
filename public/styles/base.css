@@ -1,12 +1,6 @@
 * {
   box-sizing: border-box;
 }
-.contra {
-  background-image: url("images/trekship.png");
-  background-position: 120% 70px, 0px 0px, 0px;
-  background-repeat: no-repeat, repeat, repeat;
-  animation: animate-background linear 50s infinite;
-}
 
 @keyframes animate-background {
   from{ background-position: 120% 70px, 0px 0px, 0px;}
