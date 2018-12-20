@@ -1,5 +1,18 @@
+@font-face {
+  font-family: borg-9;
+  src: url(/styles/fonts/borg-9/borg9.ttf);
+}
+@font-face {
+  font-family: lovecraftDiary;
+  src: url(/styles/fonts/lovecrafts-diary/lovecraftsdiary.ttf)
+}
+@font-face {
+  font-family: halo;
+  src: url(/styles/fonts/halo3/Halo3.ttf)
+}
 #headtitle {
-  text-align: left;
+  text-align: center;
+  font-family: borg-9;
   padding-left: 3vw;
   color: #ffa500;
 }
@@ -96,12 +109,16 @@ a:hover {
 /* greater than mobile - desktop view */
 @media screen and (min-width: 960px) {
   #headtitle {
-    text-align: left;
+    text-align: center;
+    font-family: borg-9;
     padding-left: 3vw;
     color: #ffa500;
     padding-left: 3vw;
     color: #00eeff;
     font-size: 3vw;
+  }
+  #headtitle:hover {
+    font-family: lovecraftDiary;
   }
   header {
     position: fixed;
@@ -127,9 +144,8 @@ a:hover {
   #nav{
     display: flex;
     position: relative;
-    width: 800px;
+    width: 52vw;
     margin: 0 0 0 0;
-    /* top right left bottom */
     opacity: 1;
     background: none;
     border-radius: .5em;
@@ -140,13 +156,19 @@ a:hover {
     }
     
     #nav li {
-    width: 150px;
-    margin-left:2vw;
-    padding: 3px 0;
-    font-size: 22px;
+      width: 27vw;
+      font-size: 2vw;
+      font-family: halo;
+      align-self: center;
+      position: relative;
+      bottom: 3vw;
     }
     #nav li:nth-child(1) {
-      width: 100px;
+      width: 4vw;
+    }
+    #nav>li:hover {
+      font-size: 2.5vw;
+      font-family: lovecraftDiary;
     }
     #navToggle input:checked ~ ul {
     transform: none;
@@ -179,18 +201,62 @@ a:hover {
   /* additions */
 }
 
-/*   my stuff */
+/*=============my stuff==================*/
+
+@keyframes colorAnima {
+  0% {background-image: repeating-linear-gradient(red, yellow 1%, blue 2%);}
+  5% {background-image: repeating-linear-gradient(red, yellow 2%, green 3%);}
+  10% {background-image: repeating-linear-gradient(red, yellow 4%, green 6%);}
+  15% {background-image: repeating-linear-gradient(red, yellow 6%, green 9%);}
+  20% {background-image: repeating-linear-gradient(red, yellow 8%, green 12%);}
+  25% {background-image: repeating-linear-gradient(red, yellow 10%, green 15%);}
+  30% {background-image: repeating-linear-gradient(red, yellow 12%, green 18%);}
+  35% {background-image: repeating-linear-gradient(red, yellow 14%, green 21%);}
+  40% {background-image: repeating-linear-gradient(red, yellow 16%, green 24%);}
+  45% {background-image: repeating-linear-gradient(red, yellow 18%, green 27%);}
+  50% {background-image: repeating-linear-gradient(red, yellow 20%, green 30%);}
+  55% {background-image: repeating-linear-gradient(red, yellow 18%, green 27%);}
+  60% {background-image: repeating-linear-gradient(red, yellow 16%, green 24%);}
+  65% {background-image: repeating-linear-gradient(red, yellow 14%, green 21%);}
+  70% {background-image: repeating-linear-gradient(red, yellow 12%, green 18%);}
+  75% {background-image: repeating-linear-gradient(red, yellow 10%, green 15%);}
+  80% {background-image: repeating-linear-gradient(red, yellow 8%, green 12%);}
+  85% {background-image: repeating-linear-gradient(red, yellow 6%, green 9%);}
+  90% {background-image: repeating-linear-gradient(red, yellow 4%, green 6%);}
+  95% {background-image: repeating-linear-gradient(red, yellow 2%, green 3%);}
+  100% {background-image: repeating-linear-gradient(red, yellow 1%, blue 2%);}
+}
 
 #subTitle {
   width: 100vw;
   color: #00eeff;
-  background-color: #808080;
+  background-image: repeating-linear-gradient(red, yellow 1%, blue 2%);
   text-align: center;
+}
+
+#subTitle:hover {
+  width: 100vw;
+  color: #00eeff;
+  text-align: center;
+  background-image: repeating-linear-gradient(rgba(255, 0, 102, 0.2), rgba(255, 255, 102, 0.2) 1%, rgba(111, 255, 51, 0.2) 2%);
+  animation-name: colorAnima;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-delay: 0ms;
+}
+
+#subTitle>h2 {
+  position: relative;
+  text-align: center;
+  font-family: halo;
+}
+#subTitle>h2:hover {
+  font-family: lovecraftDiary;
 }
 
 #mainStuff {
   width: 100vw;
-  background: url(images/corn1.jpg) no-repeat center center fixed;
+  background: url(/styles/images/space.jpg) no-repeat center center fixed;
   -webkit-background-size: cover; 
   background-size: cover;
   color: #ffa500;
@@ -198,7 +264,7 @@ a:hover {
 
 #mainStuff>div {
   /* background-color: #000000; */
-  background: url(images/curtain1.png) no-repeat center center fixed;
+  background: url(/styles/images/futuristic.jpg) no-repeat center center fixed;
   -webkit-background-size: cover;
   background-size: cover;
   position: relative;
@@ -327,6 +393,21 @@ h3 {
   font-size: 2vw;
 }
 
+#bottomImg {
+  left: 18vw;
+  bottom: 6vw;
+  width: 50vw;
+  height: 6vw;
+  position: relative
+}
+#bottomImg>img {
+  height: 8vw;
+  width: 60vw;
+  position: relative;
+  bottom: 1vw;
+  left: 10vw;
+}
+
 /* Original Footer CSS */
 
 #footnav{
@@ -346,10 +427,9 @@ h3 {
   footer {
     background-color: #222222;
     position: relative;
-    /* height: auto !important; */
-    /* min-height: 100%; */
     z-index: 10;
     bottom: 0vw;
+    height: 10vw;
   }
   
   
