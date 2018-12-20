@@ -27,6 +27,7 @@ height: 90%;
 margin: 0 auto;
 margin-bottom: 3vw;
 background-color: rgba(136, 136, 136, 0.514);
+border: 8px double #000;
 }
 
 #resultsimage {
@@ -124,6 +125,7 @@ padding-left: 2vw;
   margin-bottom: 3vw;
   margin-left: 2vw;
   background-color: rgba(136, 136, 136, 0.514);
+  border: 8px double #000;
 }
 .homemovies {
   height: 29vw;

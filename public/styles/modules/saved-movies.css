@@ -18,9 +18,10 @@
   margin-bottom: 3vw;
   margin-left: 5vw;
   background-color: rgba(136, 136, 136, 0.514);
+  border: 8px double #000;
 }
 #savedlistl {
-
+  /* background: url(../images/curtain1.png) no-repeat center center fixed; */
 }
 
 #savedimage {
@@ -72,9 +73,10 @@ font-size: 3vw;
   margin: 0 auto;
   margin-bottom: 3vw;
   background-color: rgba(136, 136, 136, 0.514);
+  border: 8px double #000;
 }
 #savedlistl {
-
+  /* background: url(../images/curtain1.png) no-repeat center center fixed; */
 }
 
 #savedimage {

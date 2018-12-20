@@ -22,11 +22,13 @@
   width: 85vw;
   height: 90%;
   margin-top: 1vw;
+  
 }
 .homemovies {
   height: 90vw;
   padding-bottom: 1vw;
   border-radius: .3em;
+  
 }
 /*=========Image Hover========*/
 .homemovies:hover {
