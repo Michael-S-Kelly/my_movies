@@ -78,7 +78,7 @@
         </section>
       </div>
     </div>
-      <div id="searchcontain">
+      <div id="amazoncontain">
         <img class="projector" src="../../styles/images/projector.jpg">
         <form target="_blank" class="search-form" action="http://www.amazon.com/exec/obidos/external-search" [RETURN] method="get">
           <input type="hidden" name="mode" value="blended" />
@@ -137,7 +137,10 @@
                 </div>
               <% } %>
             </section>
+            <div id="button-contain">
             <button class="update-movie" type=submit>Update Movie</button>
+            <button class="create-review" type=submit>Create Review</button>
+          </div>
             <section class="updatemovies pop-hide">
               <form action="<%= `/details/${movie.id}` %>" method="post">
                 <input type="hidden" name="_method" value="<%-'put' %>">
@@ -156,19 +159,18 @@
                 <button type=submit>Save Update</button>
               </form>
             </section>
-            <button class="create-review" type=submit>Create Review</button>
             <section class="createreview pop-hide">
             <form action="<%- `/details/${movie.id}` %>" method="post">
-              <lable><input type="text" name="username" placeholder="userName" value="userName"></lable>
+              <lable><input type="text" name="username" placeholder="userName" id="editreview" value="userName"></lable>
               <input type="hidden" name="created_at" value=" <%= Date.now() %>" />
-              <lable><input type="text" name="review" placeholder="Your Review Here" value="review" /></lable>
+              <lable><input type="text" name="review" placeholder="Your Review Here" id="editreview" value="review" /></lable>
               <input type="hidden" name="movie_id" value="<%- movie[0].movie_id %>" />
               <button type=submit>Save Review</button>
             </form>
             </section>
           </div>
         </div>
-          <div id="searchcontain">
+          <div id="amazoncontain">
             <img class="projector" src="../../styles/images/projector.jpg">
             <form target="_blank" class="search-form" action="http://www.amazon.com/exec/obidos/external-search" [RETURN] method="get">
               <input type="hidden" name="mode" value="blended" />
