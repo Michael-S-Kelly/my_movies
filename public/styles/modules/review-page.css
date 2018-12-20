@@ -30,6 +30,7 @@ border-radius: .3em;
 font-size: 6vw;
 font-weight: bold;
 /* height: 6vw; */
+margin-top: 2vw;
 text-overflow: ellipsis;
 margin-left: 10vw;
 overflow: hidden;
@@ -99,10 +100,12 @@ height: 5vw
   width: 40vw;
 }
 .delete {
+  opacity: 0;
   position: absolute;
   right: 0;
   margin-top: 0vw;
   margin-right: 2vw;
+  width: 18vw;
   background-color: #fff;
   color: #000;
   border-radius: .5em;
@@ -110,7 +113,21 @@ height: 5vw
   padding-bottom: 2vw;
   font-size: 2vw;
 }
-
+#dmx {
+  background: url(../images/x2.png)  center no-repeat;
+  height: 10vw;
+  margin-top: .8vw;
+  margin-right: .8vw;
+  width: 18vw;
+  height: 10vw;
+  border-radius: 0;
+}
+#dmx:hover {
+  animation: shake 1s cubic-bezier(.36,.07,.19,.97) infinite;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+ }
 #reviewer-contain {
   background-color: rgba(136, 136, 136, 0.514);
   color: #fff;
@@ -277,6 +294,7 @@ border-radius: .3em;
 .detailstitle{
 font-size: 3.8vw;
 font-weight: bold;
+margin-top: 1vw;
 /* height: 6vw; */
 text-overflow: ellipsis;
 margin-left: 6vw;
@@ -348,9 +366,11 @@ height: 5vw
 }
 .delete {
   position: absolute;
+  opacity: 0;
   right: 0;
-  margin-top: 1.7vw;
-  margin-right: 6vw;
+  margin-top: .7vw;
+  margin-right: 0vw;
+  width: 5vw;
   background-color: #fff;
   color: #000;
   border-radius: .5em;
@@ -358,6 +378,21 @@ height: 5vw
   padding-bottom: .5vw;
   font-size: 1vw;
 }
+#dmx {
+  background: url(../images/x2.png) center no-repeat;
+  width: 5vw;
+  height: 10vw;
+  border-radius: .3em;
+  height: 5.2vw;
+  margin-top: 0;
+  margin-right: 0;
+}
+#dmx:hover {
+  animation: shake 1s cubic-bezier(.36,.07,.19,.97) infinite;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+ }
 
 #reviewer-contain {
   background-color: rgba(136, 136, 136, 0.514);

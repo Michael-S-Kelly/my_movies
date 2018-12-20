@@ -29,7 +29,9 @@
             <%= movie.title %>
           </h3>
           <form action="/delete/<%= movie.id %>" method="post">
+            <div id="dmx">
             <button class="delete" type="submit">Delete Movie</button>
+          </div>
           </form>
         </section>
         <p id="overviewdeets">
@@ -107,7 +109,9 @@
                 <%= movie[0].title %>
               </h3>
               <form action="/delete/<%= movie[0].id %>" method="post">
+                <div id="dmx">
                 <button class="delete" type="submit">Delete Movie</button>
+              </div>
               </form>
             </section>
             <p id="overviewdeets">
