@@ -1,7 +1,3 @@
-DROP DATABASE my_movies;
-CREATE DATABASE my_movies;
-\c my_movies;
-
 DROP TABLE IF EXISTS reviews;
 DROP TABLE IF EXISTS movies;
 
@@ -22,6 +18,6 @@ CREATE TABLE reviews (
   review TEXT,
   created_at BIGINT,
   movie_id INTEGER NOT NULL,
-  FOREIGN KEY (movie_id) REFERENCES movies (id)
+  FOREIGN KEY (movie_id) REFERENCES movies (id) ON DELETE CASCADE
 );
 
