@@ -64,8 +64,8 @@ function Movie(data) {
   this.title = data.title;
   this.popularity = data.popularity;
   this.overview = data.overview;
-  if (data.released_on) {
-    this.released_on = data.released_on;
+  if (data.release_date) {
+    this.released_on = data.release_date;
   } else {
     this.released_on = 'N/A';
   }
@@ -214,16 +214,17 @@ function getDetails(request, response) {
 
 function deleteMovie(request, response) {
   console.log('delete running');
-  //let SQL = 'DELETE FROM movies, reviews INNER JOIN reviews ON movies.id = movie_id WHERE movies.id=$1;';
-  let SQL2 = `DELETE FROM reviews WHERE id = $1;`;
+  //let SQL2 = 'DELETE FROM movies reviews ON movies.id = movie_id WHERE movies.id=$1;';
+  //let SQL2 = `DELETE FROM reviews WHERE id = $1;`;
 
-  let value = [request.params.id];
+  //let value = [request.params.id];
   
-  client.query(SQL2, value).then(function () {
+  //client.query(SQL2, value)//.then(function () {
     let SQL = `DELETE FROM movies WHERE id = $1;`;
+    console.log(request.params.id);
     let values = [request.params.id];
     client.query(SQL, values).then(response.redirect('/mymovies'));
-  })
+  //})
 }
 
 

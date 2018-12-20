@@ -1,0 +1,499 @@
+/* mobile view */
+
+/* details/review page view */
+
+
+#sub-contain {
+  position: relative;
+  display: block;
+  margin: 0 auto;
+  margin-top: 1vw;
+}
+.details-contain {
+  display: block;
+  flex-direction:column;
+  flex-wrap: nowrap;
+  width: 80vw;
+  padding-bottom: 5vw;
+  margin-right: 1vw;
+}
+#deet-image-contain {
+  width: 80vw;
+}
+#detailsimage {
+margin-top:.5vw;
+height: 70vw;
+margin-left: 6vw;
+border-radius: .3em;
+}
+.detailstitle{
+font-size: 6vw;
+font-weight: bold;
+/* height: 6vw; */
+text-overflow: ellipsis;
+margin-left: 10vw;
+overflow: hidden;
+white-space: nowrap;
+width: 70%;
+height: 5vw
+/* padding-left: 2vw; */
+
+}
+
+#popdetails {
+  font-size: 3.5vw;
+  margin-top: .5vw;
+}
+
+#overviewdeets{
+  font-size: auto;
+  overflow-x: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 3vw;
+  margin-bottom: 2vw;
+  padding: 1vw .5vw 1vw 1vw;
+  width: 80%;
+  height: 18vw;
+  color: #fff;
+  border-radius: .3em;
+  background-color: rgba(136, 136, 136, 0.514);
+}
+#releaseddeets {
+  font-size: 3.5vw;
+}
+.savedeets {
+  background-color: #fff;
+  color: #000;
+  border-radius: .5em;
+  width: 35%;
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+  padding-top: 1.5vw;
+  padding-bottom: 1.5vw;
+  font-size: 3vw;
+}
+
+#delete-holder {
+  display: flex;
+  justify-content: space-between;  
+}
+
+.updatemovies form, .createreview form {
+  display: flex;
+  flex-flow: column;
+}
+
+.sub-contain label {
+  margin: .5vw;
+}
+.sub-contain input {
+  width: 30vw;
+}
+.createreview input {
+  margin: .5vw;
+  width: 40vw;
+}
+
+.createreview button, .updatemovies button {
+  width: 40vw;
+}
+.delete {
+  position: absolute;
+  right: 0;
+  margin-top: 0vw;
+  margin-right: 2vw;
+  background-color: #fff;
+  color: #000;
+  border-radius: .5em;
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+  font-size: 2vw;
+}
+
+#reviewer-contain {
+  background-color: rgba(136, 136, 136, 0.514);
+  color: #fff;
+  width: 30vw;
+}
+#overviewdeets2{
+  font-size: auto;
+  overflow-x: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1vw;
+  margin-bottom: .5vw;
+  padding: 2vw;
+  width: 60%;
+  height: auto;
+  color: #fff;
+  border-radius: .3em;
+  background-color: rgba(136, 136, 136, 0.514);
+}
+.update-movie {
+  width: 24vw;
+  margin-top: .5vw;
+  margin-right: 4.1vw;
+  background-color: #fff;
+  color: #000;
+  border-radius: .5em;
+   padding-top: 2vw;
+  padding-bottom: 2vw;
+  font-size: 3vw;
+}
+/* .reviews {
+  margin-bottom:
+} */
+.create-review {
+  width: 24vw;
+  margin-top: .5vw;
+  margin-right: 4.1vw;
+  background-color: #fff;
+  color: #000;
+  border-radius: .5em;
+  padding-top: 2vw;
+  padding-bottom: 2vw;
+  font-size: 3vw;
+}
+#button-contain {
+  padding-left: 13vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+#star-image-deets {
+  height: 3.5vw;
+  padding-top: 1vw;
+  z-index: 1;
+}
+
+#star-rating-deets {
+  position: absolute;
+  padding-top: 1vw;
+  padding-left: 9.5vw;
+}
+#editdeets{
+  font-size: auto;
+  overflow-x: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1vw;
+  margin-bottom: .5vw;
+  padding: 2vw;
+  width: 60%;
+  height: 100%;
+  color: #fff;
+  border-radius: .3em;
+  background-color: rgba(136, 136, 136, 0.514);
+}
+#editreview{
+  font-size: auto;
+  overflow-x: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1vw;
+  margin-bottom: .5vw;
+  padding: 2vw;
+  width: 60%;
+  height: 8vw;
+  color: #fff;
+  border-radius: .3em;
+  background-color: rgba(136, 136, 136, 0.514);
+}
+.save-review {
+  width: 10vw;
+  margin-top: .5vw;
+  margin-right: 4.1vw;
+  background-color: #fff;
+  color: #000;
+  border-radius: .5em;
+  padding-top: .5vw;
+  padding-bottom: .5vw;
+  font-size: 1vw;
+}
+
+#amazon-title {
+  font-size: 3vw;
+  font-weight: bold;
+  height: 3vw;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+#amazon-search {
+  padding-top: .5vw;
+  padding-bottom: .5vw;
+  width: 10vw;
+  border-radius: .5em;
+}
+
+#amazon-but {
+  width: 10vw;
+  margin-top: .5vw;
+  margin-right: 4.1vw;
+  background-color: #fff;
+  color: #000;
+  border-radius: .5em;
+  padding-top: .5vw;
+  padding-bottom: .5vw;
+}
+
+#amazoncontain {
+  display: flex;
+  margin-left: 8vw;
+  border-radius: .3em;
+  /* box-shadow: .5vw 0vw .0 0vw  rgba(0, 0, 0, 0.466); */
+  background-color: rgba(136, 136, 136, 0.514);
+  width: 70vw;
+}
+/* Desktop view */
+
+@media screen and (min-width: 960px) {
+  /* Details/Review page view */
+#sub-contain {
+  position: relative;
+  display: flex;
+  margin: 0 auto;
+  margin-top: 1vw;
+}
+.details-contain {
+  display: flex;
+  flex-direction:column;
+  flex-wrap: wrap;
+  width: 50vw;
+  padding-bottom: 5vw;
+  margin-right: 5vw;
+}
+#deet-image-contain {
+  width: 500px;
+}
+#detailsimage {
+margin-top:.5vw;
+height: 40vw;
+margin-left: 10vw;
+border-radius: .3em;
+}
+.detailstitle{
+font-size: 3.8vw;
+font-weight: bold;
+/* height: 6vw; */
+text-overflow: ellipsis;
+margin-left: 6vw;
+overflow: hidden;
+white-space: nowrap;
+width: 70%;
+height: 5vw
+/* padding-left: 2vw; */
+
+}
+
+#popdetails {
+  font-size: 1.5vw;
+  margin-top: .5vw;
+}
+
+#overviewdeets{
+  font-size: auto;
+  overflow-x: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1vw;
+  margin-bottom: .5vw;
+  padding: 1vw .5vw 1vw 1vw;
+  width: 60%;
+  height: 8vw;
+  color: #fff;
+  border-radius: .3em;
+  background-color: rgba(136, 136, 136, 0.514);
+}
+#releaseddeets {
+  font-size: 1.5vw;
+}
+.savedeets {
+  background-color: #fff;
+  color: #000;
+  border-radius: .5em;
+  width: 35%;
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+  padding-top: 1.5vw;
+  padding-bottom: 1.5vw;
+  font-size: 3vw;
+}
+
+#delete-holder {
+  display: flex;
+  justify-content: space-between;  
+}
+
+.updatemovies form, .createreview form {
+  display: flex;
+  flex-flow: column;
+}
+
+.sub-contain label {
+  margin: .5vw;
+}
+.sub-contain input {
+  width: 30vw;
+}
+.createreview input {
+  margin: .5vw;
+  width: 40vw;
+}
+
+.createreview button, .updatemovies button {
+  width: 40vw;
+}
+.delete {
+  position: absolute;
+  right: 0;
+  margin-top: 1.7vw;
+  margin-right: 6vw;
+  background-color: #fff;
+  color: #000;
+  border-radius: .5em;
+   padding-top: .5vw;
+  padding-bottom: .5vw;
+  font-size: 1vw;
+}
+
+#reviewer-contain {
+  background-color: rgba(136, 136, 136, 0.514);
+  color: #fff;
+  width: 30vw;
+}
+#overviewdeets2{
+  font-size: auto;
+  overflow-x: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1vw;
+  margin-bottom: .5vw;
+  padding: 2vw;
+  width: 60%;
+  height: auto;
+  color: #fff;
+  border-radius: .3em;
+  background-color: rgba(136, 136, 136, 0.514);
+}
+.update-movie {
+  width: 10vw;
+  margin-top: .5vw;
+  margin-right: 4.1vw;
+  background-color: #fff;
+  color: #000;
+  border-radius: .5em;
+   padding-top: .5vw;
+  padding-bottom: .5vw;
+  font-size: 1vw;
+}
+/* .reviews {
+  margin-bottom:
+} */
+.create-review {
+  width: 10vw;
+  margin-top: .5vw;
+  margin-right: 4.1vw;
+  background-color: #fff;
+  color: #000;
+  border-radius: .5em;
+  padding-top: .5vw;
+  padding-bottom: .5vw;
+  font-size: 1vw;
+}
+#button-contain {
+  padding-left: 13vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+#star-image-deets {
+  height: 3.5vw;
+  padding-top: 1vw;
+  z-index: 1;
+}
+
+#star-rating-deets {
+  position: absolute;
+  padding-top: 1vw;
+  padding-left: 9.5vw;
+}
+#editdeets{
+  font-size: auto;
+  overflow-x: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1vw;
+  margin-bottom: .5vw;
+  padding: 2vw;
+  width: 60%;
+  height: 100%;
+  color: #fff;
+  border-radius: .3em;
+  background-color: rgba(136, 136, 136, 0.514);
+}
+#editreview{
+  font-size: auto;
+  overflow-x: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1vw;
+  margin-bottom: .5vw;
+  padding: 2vw;
+  width: 60%;
+  height: 8vw;
+  color: #fff;
+  border-radius: .3em;
+  background-color: rgba(136, 136, 136, 0.514);
+}
+.save-review {
+  width: 10vw;
+  margin-top: .5vw;
+  margin-right: 4.1vw;
+  background-color: #fff;
+  color: #000;
+  border-radius: .5em;
+  padding-top: .5vw;
+  padding-bottom: .5vw;
+  font-size: 1vw;
+}
+
+#amazon-title {
+  font-size: 3vw;
+  font-weight: bold;
+  height: 3vw;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+#amazon-search {
+  padding-top: .5vw;
+  padding-bottom: .5vw;
+  width: 10vw;
+  border-radius: .5em;
+}
+
+#amazon-but {
+  width: 10vw;
+  margin-top: .5vw;
+  margin-right: 4.1vw;
+  background-color: #fff;
+  color: #000;
+  border-radius: .5em;
+  padding-top: .5vw;
+  padding-bottom: .5vw;
+}
+
+#amazoncontain {
+  display: flex;
+  flex-direction: row;
+  margin-left: 18vw;
+  border: none;
+  /* box-shadow: .5vw 0 0 0vw  #000; */
+  background-color: rgba(136, 136, 136, 0.514);
+  width: 50vw;
+}
+}

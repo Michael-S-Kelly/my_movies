@@ -4,6 +4,11 @@
 <body>
   <%- include('../../layout/header') %>
 <main id="homeContent">
+    <div class="goku-stars">
+        <div class="open-sesame">
+          <div class="goku1">
+              <div class="goku2">
+                <div class="goku3">
     <%- include('../../layout/search') %>
   <h2 id="resultstitle"> Search Results</h2>
   <section class ="all-api-movies" id ="test">
@@ -24,6 +29,7 @@
             <p id="popresults">Popularity: <%= data.popularity %></p>
             <input type="hidden" name="overview" value="<%- data.overview %>">
             <p id="overviewresults"><%= data.overview %></p>
+            <input type="hidden" value="<%= data.stars %>" name="stars">
             <input type="hidden" name="released_on" value="<%- data.released_on %>">
             <p id="releasedresult">Released On: <%= data.released_on %></p>
             <input type="hidden" name="created_at" value="<%- data.created_at %>">
@@ -33,8 +39,15 @@
       </div>
       <% }) %>
   </section>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
 </main>
 <%- include('../../layout/footer') %>
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+<script src="/scripts/app.js"></script>
 </body>
 </html>
 
