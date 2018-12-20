@@ -109,7 +109,15 @@ This app uses the TMDB API. To get your API key, make an account in TMDB, got to
 - JQuery
 - EJS
 
-
+### Packages
+- ejs
+- express
+- cors
+- superagent
+- pg
+- dotenv
+- method-override
+- nodemon (optional)
 ### API
 - theMovieDB https://www.themoviedb.org/documentation/api
 
