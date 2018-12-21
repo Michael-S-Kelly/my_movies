@@ -63,6 +63,22 @@ height: 5vw
 #releaseddeets {
   font-size: 3.5vw;
 }
+#user-r-title {
+  font-size: 3.5vw;
+  margin-top: 1vw;
+  margin-bottom: 1vw;
+}
+
+#no-reviews {
+  font-size: 10.5vw;
+  color: #fff;
+  box-shadow: #000;
+  margin-bottom: 2vw;
+  animation: shake 1s cubic-bezier(.36,.07,.19,.97) infinite;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
 .savedeets {
   background-color: #fff;
   color: #000;
@@ -327,6 +343,21 @@ height: 5vw
 }
 #releaseddeets {
   font-size: 1.5vw;
+}
+#user-r-title {
+  font-size: 1.5vw;
+  margin-top: .5vw;
+  margin-bottom: .5vw;
+}
+#no-reviews {
+  font-size: 5.5vw;
+  color: #fff;
+  box-shadow: #000;
+  margin-bottom: 2vw;
+  animation: shake 1s cubic-bezier(.36,.07,.19,.97) infinite;
+  transform: translate3d(0, 0, 0);
+  backface-visibility: hidden;
+  perspective: 1000px;
 }
 .savedeets {
   background-color: #fff;
