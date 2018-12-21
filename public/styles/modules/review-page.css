@@ -179,7 +179,7 @@ height: 5vw
   flex-wrap: wrap;
 }
 #star-image-deets {
-  height: 3.5vw;
+  height: 7.5vw;
   padding-top: 1vw;
   z-index: 1;
 }
@@ -188,6 +188,9 @@ height: 5vw
   position: absolute;
   padding-top: 1vw;
   padding-left: 9.5vw;
+  display: flex;
+  flex-flow: column;
+  top: 0vw;
 }
 #editdeets{
   font-size: auto;
@@ -454,6 +457,7 @@ height: 5vw
   position: absolute;
   padding-top: 1vw;
   padding-left: 9.5vw;
+  display: block;
 }
 #editdeets{
   font-size: auto;
