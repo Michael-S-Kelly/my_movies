@@ -176,14 +176,14 @@ star_flix (repository)
 ```
 
 ## Change Log
-12-14-2018 - Basic Scaffold and Database has been set up
-12-17-2018 10:00am - Application now has a fully functional express server, linked to the tmdb API.
-12-17-2018 2:00pm - Application can now save movies from the API to the database, and render the saved movies. Popular Movies now appear on index.ejs
-12-17-2018 5:00pm - Basic CSS is in place. 
-12-18-2018 10:00am - Application now has a view details page that takes details from database and renders them on page. The ability to add a review has been added. 
-12-18-2018 2:00am - Application will now sort popular movies based on user selections.
-12-19-2018 3:00pm - Application now has ability to take in multiple reviews for each movie. 
-12-20-2018 11:00am - Application now has the ability to delete movies and all associated reviews. 
++ 12-14-2018 - Basic Scaffold and Database has been set up
++ 12-17-2018 10:00am - Application now has a fully functional express server, linked to the tmdb API.
++ 12-17-2018 2:00pm - Application can now save movies from the API to the database, and render the saved movies. Popular Movies now appear on index.ejs
++ 12-17-2018 5:00pm - Basic CSS is in place. 
++ 12-18-2018 10:00am - Application now has a view details page that takes details from database and renders them on page. The ability to add a review has been added. 
++ 12-18-2018 2:00am - Application will now sort popular movies based on user selections.
++ 12-19-2018 3:00pm - Application now has ability to take in multiple reviews for each movie. 
++ 12-20-2018 11:00am - Application now has the ability to delete movies and all associated reviews. 
 
 
 
