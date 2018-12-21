@@ -44,8 +44,8 @@
           <%= movie.popularity %>
         </p>
         <div class="reviews">
-          <h3 id="releaseddeets">User Reviews</h3>
-          <p> No Reviews Yet!</p>
+          <h3 id="user-r-title">User Reviews</h3>
+          <p id="no-reviews"> No Reviews Yet!</p>
         </div>
         <div id="button-contain">
         <button class="update-movie" type=submit>Update Movie</button>
@@ -127,7 +127,7 @@
     
     
             <section class="reviews">
-              <h3 id="releaseddeets">User Reviews</h3>
+              <h3 id="user-r-title">User Reviews</h3>
               <% for (let i = 0; i < movie.length; i ++){ %>
                 <div id="overviewdeets2">
                   <p>
