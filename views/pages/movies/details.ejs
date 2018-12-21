@@ -94,16 +94,20 @@
         </form>
       </div> 
       <% } else { %>
-        <div id="sub-contain">
-            <div id="deet-image-contain">
-              <img id="detailsimage" src="<%= movie[0].image_url %>">
-            </div>
-        <div class="details-contain">
-            <div class="star-rating-results">
-              <% for(let i=0; i < movie[0].stars; i++) { %>
-              <img class="star-image-results" src="../styles/images/star1.png">
-              <% }%>
-            </div>
+                <div id="sub-contain">
+              <div id="deet-image-contain">
+                <img id="detailsimage" src="<%= movie[0].image_url %>">
+              </div>
+              
+              <div id="star-rating-deets">
+                <% for(let i=0; i < movie[0].stars; i++) { %>
+                  <img id="star-image-deets" src="../styles/images/star1.png">
+                  <% }%>
+                </div>
+                
+                
+                
+          <div class="details-contain">
             <section id="delete-holder">
               <h3 class="detailstitle">
                 <%= movie[0].title %>
